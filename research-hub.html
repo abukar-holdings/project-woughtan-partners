@@ -3,13 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Woughton Global Partners - Market Intelligence with Live African Market Data and News" />
+    <meta
+      name="description"
+      content="Woughton Global Partners - Market Intelligence from the Ground Up. Proprietary research combining on-the-ground insights with rigorous economic analysis."
+    />
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png" />
     <title>Research Hub | Woughton Global Partners</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Red+Hat+Display:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Red+Hat+Display:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       :root {
@@ -44,7 +51,7 @@
         line-height: 1.2;
       }
 
-      /* ========== HEADER (from index.html) ========== */
+      /* ========== FIXED HEADER ========== */
       .header-wrapper {
         position: fixed;
         top: 0;
@@ -55,6 +62,7 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
+      /* Topline */
       .header-top {
         background: var(--brand-primary);
         padding: 6px 0;
@@ -115,6 +123,7 @@
         color: var(--brand-accent);
       }
 
+      /* Main Header */
       .main-header {
         padding: 12px 0;
         background: var(--neutral-surface);
@@ -142,6 +151,7 @@
         width: auto;
       }
 
+      /* Navigation */
       .nav-area .main-nav-list {
         display: flex;
         gap: 5px;
@@ -184,17 +194,12 @@
         transition: all var(--transition);
         padding: 8px 0;
         margin-top: 8px;
-        list-style: none;
       }
 
       .has-dropdown:hover .submenu {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
-      }
-
-      .submenu li {
-        list-style: none;
       }
 
       .submenu a {
@@ -212,6 +217,7 @@
         padding-left: 25px;
       }
 
+      /* Search Bar */
       .search-wrapper {
         display: flex;
         align-items: center;
@@ -245,6 +251,7 @@
         color: var(--brand-accent);
       }
 
+      /* Header Right */
       .header-right {
         display: flex;
         align-items: center;
@@ -268,6 +275,7 @@
         box-shadow: 0 4px 12px rgba(185, 115, 47, 0.3);
       }
 
+      /* Mobile Hamburger */
       .mobile-hamburger {
         display: none;
         background: var(--brand-accent);
@@ -284,28 +292,41 @@
         background: var(--brand-accent-hover);
       }
 
+      /* Mobile Navigation */
       .mobile-nav-panel {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
-        background: rgba(7, 29, 54, 0.98);
-        backdrop-filter: blur(10px);
+        background: var(--brand-primary);
         z-index: 99998;
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        overflow-y: auto;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
       }
 
       .mobile-nav-panel.active {
-        transform: translateX(0);
+        max-height: 100vh;
+        padding: 20px 0;
+        overflow-y: auto;
       }
 
       .mobile-nav-inner {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 30px 20px;
+        padding: 0 20px;
+      }
+
+      .mobile-close {
+        background: none;
+        border: none;
+        color: var(--text-on-primary);
+        font-size: 28px;
+        cursor: pointer;
+        float: right;
+        padding: 5px;
+        margin-bottom: 15px;
       }
 
       .mobile-links {
@@ -314,51 +335,27 @@
         margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 8px;
       }
 
-      .mobile-links > li > a {
+      .mobile-links a {
         color: var(--text-on-primary);
         text-decoration: none;
-        padding: 16px 20px;
+        padding: 12px 15px;
         display: block;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        font-size: 16px;
-        font-weight: 500;
+        border-radius: 6px;
+        transition: var(--transition);
       }
 
-      .mobile-links > li > a:hover {
+      .mobile-links a:hover {
         background: rgba(255, 255, 255, 0.1);
-        padding-left: 25px;
       }
 
       .mobile-submenu {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        margin-top: 4px;
-        list-style: none;
-      }
-
-      .mobile-submenu.active {
-        max-height: 500px;
-      }
-
-      .mobile-submenu a {
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
-        padding: 12px 20px 12px 40px;
-        display: block;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        font-size: 14px;
-      }
-
-      .mobile-submenu a:hover {
-        background: rgba(255, 255, 255, 0.08);
-        color: var(--brand-accent);
-        padding-left: 45px;
+        transition: max-height 0.3s ease;
+        margin-left: 15px;
       }
 
       .submenu-toggle {
@@ -366,43 +363,52 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: var(--text-on-primary);
-        text-decoration: none;
-        padding: 16px 20px;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        font-size: 16px;
-        font-weight: 500;
-      }
-
-      .submenu-toggle:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      .submenu-toggle i {
-        transition: transform 0.3s ease;
-        font-size: 14px;
-      }
-
-      .submenu-toggle.active i {
-        transform: rotate(180deg);
       }
 
       .mobile-cta {
         background: var(--brand-accent);
-        margin-top: 20px;
+        margin-top: 15px;
         text-align: center;
         font-weight: 600;
-        color: var(--text-on-primary) !important;
-        padding: 16px 20px !important;
       }
 
-      .mobile-cta:hover {
-        background: var(--brand-accent-hover);
-        padding-left: 20px !important;
+      /* ========== BREADCRUMBS ========== */
+      .breadcrumbs {
+        background: linear-gradient(135deg, rgba(7, 29, 54, 0.95), rgba(7, 29, 54, 0.98));
+        padding: 20px 0;
+        color: var(--text-on-primary);
       }
 
-      /* ========== HERO ========== */
+      .breadcrumbs .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .breadcrumbs ul {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .breadcrumbs a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .breadcrumbs a:hover {
+        color: var(--brand-accent);
+      }
+
+      .breadcrumbs span {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* ========== HERO SECTION ========== */
       .research-hero {
         background: linear-gradient(135deg, rgba(7, 29, 54, 0.95), rgba(10, 40, 68, 0.97)),
                     url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1600') center/cover;
@@ -449,8 +455,37 @@
         line-height: 1.6;
       }
 
-      /* ========== LIVE FX RATES ========== */
-      .fx-rates-section {
+      /* ========== BREAKING NEWS TICKER ========== */
+      .breaking-news-section {
+        background: var(--brand-accent);
+        color: var(--text-on-primary);
+        padding: 12px 0;
+        box-shadow: 0 2px 6px rgba(7, 29, 54, 0.06);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .breaking-content {
+        display: inline-block;
+        white-space: nowrap;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.4;
+        color: var(--text-on-primary);
+        animation: ticker 45s linear infinite;
+      }
+
+      @keyframes ticker {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      /* ========== MARKET INDICATORS ========== */
+      .market-updates-dashboard {
         background: var(--neutral-surface);
         padding: 24px 0;
         box-shadow: 0 2px 10px rgba(7, 29, 54, 0.04);
@@ -458,98 +493,107 @@
         margin-top: 14px;
       }
 
-      .fx-rates-section .container {
+      .market-updates-dashboard .container {
         max-width: 1400px;
         margin: 0 auto;
         padding: 0 20px;
       }
 
-      .fx-rates-section h3 {
+      .market-updates-dashboard h3 {
         color: var(--brand-primary);
         margin: 0;
         font-weight: 700;
         font-size: 18px;
         margin-bottom: 20px;
+      }
+
+      .market-indicators {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .indicator {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 10px;
+        background: rgba(7, 29, 54, 0.03);
+        min-width: 150px;
       }
 
-      .live-indicator {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        background: #28a745;
-        border-radius: 50%;
-        animation: pulse 2s infinite;
-      }
-
-      @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.3; }
-      }
-
-      .fx-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 18px;
-      }
-
-      .fx-card {
-        background: linear-gradient(135deg, rgba(7, 29, 54, 0.03), rgba(185, 115, 47, 0.03));
-        border: 2px solid var(--border-subtle);
-        padding: 20px;
-        border-radius: 12px;
-        transition: var(--transition);
-      }
-
-      .fx-card:hover {
-        border-color: var(--brand-accent);
-        transform: translateY(-4px);
-        box-shadow: 0 8px 20px rgba(185, 115, 47, 0.15);
-      }
-
-      .fx-pair {
-        font-size: 14px;
+      .indicator .label {
         color: var(--text-muted);
+        font-size: 12px;
         font-weight: 600;
-        margin-bottom: 8px;
       }
 
-      .fx-rate {
-        font-size: 28px;
-        font-weight: 900;
+      .indicator .value {
+        font-weight: 800;
+        font-size: 14px;
         color: var(--brand-primary);
-        margin-bottom: 4px;
       }
 
-      .fx-date {
+      .indicator .delta {
         font-size: 11px;
-        color: var(--text-muted);
+        font-weight: 700;
       }
 
-      .fx-loading {
-        text-align: center;
-        padding: 40px;
-        color: var(--text-muted);
+      .indicator .delta.up {
+        color: #28a745;
       }
 
-      .fx-error {
-        background: rgba(220, 53, 69, 0.1);
-        border: 2px solid rgba(220, 53, 69, 0.3);
-        padding: 20px;
-        border-radius: 12px;
+      .indicator .delta.down {
         color: #dc3545;
-        text-align: center;
       }
 
-      /* ========== AFRICA NEWS SECTION ========== */
-      .africa-news-section {
-        padding: 80px 0;
+      /* ========== FILTERS ========== */
+      .filters-section {
+        padding: 40px 0 20px;
         background: #f8f9fa;
       }
 
-      .africa-news-section .container {
+      .filters-section .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .filter-tabs {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      .filter-btn {
+        background: var(--neutral-surface);
+        border: 2px solid var(--border-subtle);
+        color: var(--text-dark);
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        font-size: 14px;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--brand-primary);
+        color: var(--text-on-primary);
+        border-color: var(--brand-primary);
+      }
+
+      /* ========== FEATURED REPORT ========== */
+      .featured-report-section {
+        padding: 60px 0;
+        background: var(--neutral-surface);
+      }
+
+      .featured-report-section .container {
         max-width: 1400px;
         margin: 0 auto;
         padding: 0 20px;
@@ -562,11 +606,11 @@
 
       .section-pre {
         color: var(--brand-accent);
-        font-weight: 700;
-        font-size: 14px;
+        font-weight: 600;
+        font-size: 16px;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 16px;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
         display: block;
       }
 
@@ -585,13 +629,144 @@
         line-height: 1.7;
       }
 
-      .news-grid {
+      .featured-report-card {
+        background: var(--neutral-surface);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 30px;
+        grid-template-columns: 500px 1fr;
+        gap: 0;
+        transition: var(--transition);
       }
 
-      .news-card {
+      .featured-report-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.18);
+      }
+
+      .featured-report-image {
+        background: linear-gradient(135deg, var(--brand-primary), #0a2a4a);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .featured-report-image::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -30%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(185, 115, 47, 0.2), transparent);
+        border-radius: 50%;
+      }
+
+      .featured-report-image i {
+        font-size: 120px;
+        color: var(--brand-accent);
+        position: relative;
+        z-index: 2;
+      }
+
+      .featured-report-content {
+        padding: 60px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .featured-report-badge {
+        display: inline-block;
+        background: rgba(185, 115, 47, 0.1);
+        color: var(--brand-accent);
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        align-self: flex-start;
+      }
+
+      .featured-report-title {
+        font-size: 32px;
+        color: var(--brand-primary);
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .featured-report-excerpt {
+        font-size: 17px;
+        color: var(--text-dark);
+        line-height: 1.8;
+        margin-bottom: 25px;
+      }
+
+      .featured-report-meta {
+        display: flex;
+        gap: 25px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .meta-item i {
+        color: var(--brand-accent);
+      }
+
+      .featured-report-cta {
+        background: var(--brand-accent);
+        color: var(--text-on-primary);
+        padding: 14px 32px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: var(--transition);
+        align-self: flex-start;
+      }
+
+      .featured-report-cta:hover {
+        background: var(--brand-accent-hover);
+        transform: translateX(5px);
+      }
+
+      /* ========== REPORT CARDS ========== */
+      .reports-grid-section {
+        padding: 60px 0 80px;
+        background: #f8f9fa;
+      }
+
+      .reports-grid-section .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .reports-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        gap: 35px;
+        margin-top: 40px;
+      }
+
+      .report-card {
         background: var(--neutral-surface);
         border-radius: 16px;
         overflow: hidden;
@@ -599,87 +774,468 @@
         transition: var(--transition);
         display: flex;
         flex-direction: column;
-        cursor: pointer;
+        height: 100%;
       }
 
-      .news-card:hover {
+      .report-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
       }
 
-      .news-card-image {
-        width: 100%;
-        height: 200px;
-        overflow: hidden;
+      .report-card-header {
         background: linear-gradient(135deg, var(--brand-primary), #0a2a4a);
+        padding: 30px;
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         position: relative;
+        overflow: hidden;
       }
 
-      .news-card-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-      }
-
-      .news-card:hover .news-card-image img {
-        transform: scale(1.08);
-      }
-
-      .news-card-badge {
+      .report-card-header::before {
+        content: '';
         position: absolute;
-        top: 12px;
-        left: 12px;
-        background: var(--brand-accent);
+        top: -50%;
+        right: -30%;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(185, 115, 47, 0.15), transparent);
+        border-radius: 50%;
+      }
+
+      .report-card-category {
+        background: rgba(255, 255, 255, 0.15);
         color: var(--text-on-primary);
-        padding: 6px 14px;
-        border-radius: 20px;
+        padding: 5px 12px;
+        border-radius: 15px;
         font-size: 11px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        align-self: flex-start;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 2;
       }
 
-      .news-card-content {
-        padding: 28px;
+      .report-card-title {
+        font-size: 22px;
+        color: var(--text-on-primary);
+        margin: 0;
+        line-height: 1.4;
+        position: relative;
+        z-index: 2;
+      }
+
+      .report-card-body {
+        padding: 30px;
         flex: 1;
         display: flex;
         flex-direction: column;
       }
 
-      .news-card-title {
-        font-size: 20px;
-        color: var(--brand-primary);
-        margin-bottom: 12px;
-        line-height: 1.4;
-        font-weight: 700;
-      }
-
-      .news-card-excerpt {
+      .report-card-excerpt {
         font-size: 15px;
         color: var(--text-dark);
         line-height: 1.7;
         margin-bottom: 20px;
         flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
-      .news-card-footer {
+      .report-card-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-top: 18px;
+        padding-top: 20px;
         border-top: 1px solid var(--border-subtle);
+        margin-top: auto;
       }
 
-      .news-card-date {
-        font-size: 13px;
-        color: var(--text-muted);
+      .report-card-author {
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--text-muted);
       }
 
-      .news-card-link {
+      .report-card-author i {
+        color: var(--brand-accent);
+      }
+
+      .report-card-date {
+        font-size: 13px;
+        color: var(--text-muted);
+      }
+
+      .report-card-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .report-card-cta {
+        background: var(--brand-accent);
+        color: var(--text-on-primary);
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: var(--transition);
+        flex: 1;
+        text-align: center;
+        border: 2px solid var(--brand-accent);
+      }
+
+      .report-card-cta:hover {
+        background: var(--brand-accent-hover);
+        transform: translateY(-2px);
+      }
+
+      .report-card-preview {
+        background: transparent;
+        color: var(--brand-accent);
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: var(--transition);
+        flex: 1;
+        text-align: center;
+        border: 2px solid var(--brand-accent);
+      }
+
+      .report-card-preview:hover {
+        background: rgba(185, 115, 47, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* ========== PREVIEW MODAL ========== */
+      .preview-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(7, 29, 54, 0.95);
+        z-index: 99999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        overflow-y: auto;
+      }
+
+      .preview-modal.active {
+        display: flex;
+      }
+
+      .preview-modal-content {
+        background: var(--neutral-surface);
+        border-radius: 20px;
+        max-width: 900px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .preview-modal-header {
+        background: linear-gradient(135deg, var(--brand-primary), #0a2a4a);
+        color: var(--text-on-primary);
+        padding: 40px;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+      }
+
+      .preview-modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: var(--text-on-primary);
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .preview-modal-close:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: rotate(90deg);
+      }
+
+      .preview-modal-badge {
+        display: inline-block;
+        background: rgba(185, 115, 47, 0.3);
+        color: var(--brand-accent);
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+
+      .preview-modal-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .preview-modal-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        opacity: 0.9;
+      }
+
+      .preview-modal-body {
+        padding: 40px;
+      }
+
+      .preview-content {
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--text-dark);
+        margin-bottom: 30px;
+      }
+
+      .preview-content h3 {
+        color: var(--brand-primary);
+        font-size: 24px;
+        margin: 30px 0 15px;
+      }
+
+      .preview-content h4 {
+        color: var(--brand-primary);
+        font-size: 20px;
+        margin: 25px 0 12px;
+      }
+
+      .preview-content p {
+        margin-bottom: 15px;
+      }
+
+      .preview-content ul, .preview-content ol {
+        margin: 15px 0;
+        padding-left: 30px;
+      }
+
+      .preview-content li {
+        margin-bottom: 8px;
+      }
+
+      .preview-blur {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .preview-blur::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 150px;
+        background: linear-gradient(to bottom, transparent, var(--neutral-surface));
+      }
+
+      .preview-cta-box {
+        background: linear-gradient(135deg, rgba(7, 29, 54, 0.05), rgba(185, 115, 47, 0.05));
+        border: 2px solid var(--brand-accent);
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .preview-cta-box h4 {
+        color: var(--brand-primary);
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .preview-cta-box p {
+        color: var(--text-muted);
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      .preview-cta-box .price {
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--brand-accent);
+        margin-bottom: 20px;
+      }
+
+      .preview-purchase-btn {
+        background: var(--brand-accent);
+        color: var(--text-on-primary);
+        padding: 16px 40px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+      }
+
+      .preview-purchase-btn:hover {
+        background: var(--brand-accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(185, 115, 47, 0.3);
+      }
+
+      /* ========== FREE BLOG SECTION ========== */
+      .free-blog-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, var(--brand-primary), #0a2a4a);
+        color: var(--text-on-primary);
+      }
+
+      .free-blog-section .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .free-blog-section .section-pre {
+        color: var(--brand-accent);
+      }
+
+      .free-blog-section .section-title {
+        color: var(--text-on-primary);
+      }
+
+      .free-blog-section .section-desc {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .blog-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .blog-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: var(--transition);
+      }
+
+      .blog-card:hover {
+        transform: translateY(-8px);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .blog-card-image {
+        height: 200px;
+        background: linear-gradient(135deg, rgba(185, 115, 47, 0.3), rgba(185, 115, 47, 0.1));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .blog-card-image::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -30%;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+        border-radius: 50%;
+      }
+
+      .blog-card-image i {
+        font-size: 60px;
+        color: var(--brand-accent);
+        position: relative;
+        z-index: 2;
+      }
+
+      .blog-card-content {
+        padding: 25px;
+      }
+
+      .blog-card-badge {
+        display: inline-block;
+        background: rgba(185, 115, 47, 0.2);
+        color: var(--brand-accent);
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 12px;
+      }
+
+      .blog-card-title {
+        font-size: 20px;
+        color: var(--text-on-primary);
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+
+      .blog-card-excerpt {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .blog-card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .blog-card-author {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .blog-card-link {
         color: var(--brand-accent);
         text-decoration: none;
         font-weight: 600;
@@ -690,28 +1246,11 @@
         transition: var(--transition);
       }
 
-      .news-card-link:hover {
+      .blog-card-link:hover {
         gap: 10px;
       }
 
-      .news-loading {
-        text-align: center;
-        padding: 60px;
-        color: var(--text-muted);
-        font-size: 18px;
-      }
-
-      .news-error {
-        background: rgba(220, 53, 69, 0.1);
-        border: 2px solid rgba(220, 53, 69, 0.3);
-        padding: 40px;
-        border-radius: 16px;
-        color: #dc3545;
-        text-align: center;
-        font-size: 16px;
-      }
-
-      /* ========== FOOTER (from index.html) ========== */
+      /* ========== FOOTER ========== */
       .footer {
         background: var(--brand-primary);
         color: var(--text-on-primary);
@@ -761,6 +1300,20 @@
       }
 
       /* ========== RESPONSIVE ========== */
+      @media (max-width: 1200px) {
+        .hero-headline {
+          font-size: 46px;
+        }
+
+        .section-title {
+          font-size: 36px;
+        }
+
+        .featured-report-card {
+          grid-template-columns: 1fr;
+        }
+      }
+
       @media (max-width: 980px) {
         body {
           padding-top: 90px;
@@ -776,6 +1329,10 @@
           display: block;
         }
 
+        .research-hero {
+          padding: 60px 0 50px;
+        }
+
         .hero-headline {
           font-size: 38px;
         }
@@ -784,54 +1341,36 @@
           font-size: 17px;
         }
 
-        .news-grid {
+        .reports-grid {
           grid-template-columns: 1fr;
-        }
-
-        .fx-grid {
-          grid-template-columns: repeat(2, 1fr);
         }
       }
 
       @media (max-width: 768px) {
-        .header-top .content {
-          flex-direction: column;
-          gap: 8px;
-          text-align: center;
-        }
-
-        .ht-social {
-          justify-content: center;
-        }
-
         .hero-headline {
           font-size: 32px;
         }
 
         .section-title {
-          font-size: 32px;
+          font-size: 28px;
         }
 
-        .fx-grid {
-          grid-template-columns: 1fr;
+        .market-indicators {
+          flex-direction: column;
         }
 
-        .footer-grid {
-          grid-template-columns: 1fr;
-          gap: 30px;
-          text-align: center;
-        }
-
-        .footer-col a:hover {
-          padding-left: 0;
+        .indicator {
+          width: 100%;
+          justify-content: space-between;
         }
       }
     </style>
   </head>
 
   <body>
-    <!-- ========== HEADER ========== -->
+    <!-- ========== FIXED HEADER ========== -->
     <header class="header-wrapper">
+      <!-- Topline -->
       <div class="header-top">
         <div class="content">
           <div class="left-header-top">
@@ -862,6 +1401,7 @@
         </div>
       </div>
 
+      <!-- Main Header -->
       <div class="main-header">
         <div class="content">
           <div class="header-left">
@@ -869,6 +1409,7 @@
               <img src="assets/images/logo.png" alt="Woughton Global" />
             </a>
 
+            <!-- Desktop Navigation -->
             <nav class="nav-area" aria-label="Primary navigation">
               <ul class="main-nav-list">
                 <li class="main-nav"><a href="index.html">Home</a></li>
@@ -882,14 +1423,15 @@
                   </ul>
                 </li>
 
+
                 <li class="main-nav"><a href="research-hub.html">Insights</a></li>
 
                 <li class="main-nav has-dropdown">
                   <a href="about.html">About</a>
                   <ul class="submenu">
-                    <li><a href="about.html#our-team">Our Team</a></li>
-                    <li><a href="about.html#our-approach">Our Approach</a></li>
-                    <li><a href="about.html#why-africa">Why Africa</a></li>
+                <li><a href="about.html#our-team">Our Team</a></li>
+                <li><a href="about.html#our-approach">Our Approach</a></li>
+                <li><a href="about.html#why-africa">Why Africa</a></li>
                   </ul>
                 </li>
 
@@ -898,9 +1440,11 @@
             </nav>
           </div>
 
+          <!-- Header Right -->
           <div class="header-right">
+            <!-- Search Bar -->
             <div class="search-wrapper">
-              <input type="text" placeholder="Search..." id="searchInput" autocomplete="off" />
+              <input type="text" placeholder="Search research..." id="searchInput" autocomplete="off" />
               <i class="fas fa-search"></i>
             </div>
 
@@ -915,31 +1459,29 @@
         </div>
       </div>
 
+      <!-- Mobile Navigation -->
       <nav class="mobile-nav-panel" id="mobileNav">
         <div class="mobile-nav-inner">
+          <button class="mobile-close" id="mobileCloseBtn" aria-label="Close menu">✕</button>
+
           <ul class="mobile-links">
             <li><a href="index.html">Home</a></li>
 
             <li>
-              <div class="submenu-toggle" data-submenu="services">
-                <span>Services</span>
-                <i class="fas fa-chevron-down"></i>
-              </div>
-              <ul class="mobile-submenu" id="submenu-services">
+              <a href="#" class="submenu-toggle">Services +</a>
+              <ul class="mobile-submenu">
                 <li><a href="services.html#transaction-advisory">Transaction Advisory</a></li>
                 <li><a href="services.html#market-entry">Market Entry Strategy</a></li>
                 <li><a href="services.html#capital-markets">Capital Markets</a></li>
               </ul>
             </li>
 
+
             <li><a href="research-hub.html">Insights</a></li>
 
             <li>
-              <div class="submenu-toggle" data-submenu="about">
-                <span>About</span>
-                <i class="fas fa-chevron-down"></i>
-              </div>
-              <ul class="mobile-submenu" id="submenu-about">
+              <a href="about.html" class="submenu-toggle">About +</a>
+              <ul class="mobile-submenu">
                 <li><a href="about.html#our-team">Our Team</a></li>
                 <li><a href="about.html#our-approach">Our Approach</a></li>
                 <li><a href="about.html#why-africa">Why Africa</a></li>
@@ -958,53 +1500,459 @@
       </nav>
     </header>
 
-    <!-- ========== HERO ========== -->
+    <!-- ========== BREADCRUMBS ========== -->
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><span>/</span></li>
+          <li>Research Hub</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ========== HERO SECTION ========== -->
     <section class="research-hero">
       <div class="container">
         <h1 class="hero-headline">
-          Live African Market Intelligence
+          Market Intelligence from the Ground Up
         </h1>
         <p class="hero-subheadline">
-          Real-time currency rates and breaking news from across Africa
+          Proprietary research combining on-the-ground insights with rigorous economic analysis
         </p>
       </div>
     </section>
 
-<!-- ========== LIVE FX RATES ========== -->
-    <section class="fx-rates-section">
+    <!-- ========== BREAKING NEWS TICKER ========== -->
+    <div class="breaking-news-section">
       <div class="container">
-        <h3>
-          <span class="live-indicator"></span>
-          Live Currency Rates - African Markets
-        </h3>
-        <div id="fxRatesContainer">
-          <div class="fx-loading">
-            <i class="fas fa-spinner fa-spin" style="font-size: 32px; color: var(--brand-accent);"></i>
-            <p style="margin-top: 16px;">Loading live exchange rates...</p>
+        <div class="breaking-content">
+          Nigeria Central Bank raises interest rates to 18.75% • Ghana GDP growth exceeds expectations at 3.2% • Vietnam FDI reaches record $28.2B • African fintech funding surges 40% in Q4 • Ethiopia opens telecom sector to foreign investment
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MARKET INDICATORS ========== -->
+    <div class="market-updates-dashboard">
+      <div class="container">
+        <h3>Latest Market Updates</h3>
+        <div class="market-indicators">
+          <div class="indicator">
+            <span class="label">GHS/USD:</span>
+            <span class="value">15.83</span>
+            <span class="delta down">↓ 0.12</span>
+          </div>
+          <div class="indicator">
+            <span class="label">NGN/USD:</span>
+            <span class="value">742.50</span>
+            <span class="delta up">↑ 2.1</span>
+          </div>
+          <div class="indicator">
+            <span class="label">NSE Index:</span>
+            <span class="value">67,342</span>
+            <span class="delta up">↑ 1.2%</span>
+          </div>
+          <div class="indicator">
+            <span class="label">Gold:</span>
+            <span class="value">$2,042</span>
+            <span class="delta up">↑ 0.8%</span>
+          </div>
+          <div class="indicator">
+            <span class="label">Brent Crude:</span>
+            <span class="value">$84.20</span>
+            <span class="delta up">↑ 1.5%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== FILTERS ========== -->
+    <div class="filters-section">
+      <div class="container">
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">All Research</button>
+          <button class="filter-btn" data-filter="sector-snapshots">Sector Snapshots</button>
+          <button class="filter-btn" data-filter="market-entry">Market Entry Guides</button>
+          <button class="filter-btn" data-filter="economic">Economic Commentary</button>
+          <button class="filter-btn" data-filter="deal-flow">Deal Flow Reports</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== FEATURED REPORT ========== -->
+    <section class="featured-report-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pre">Featured Research</span>
+          <h2 class="section-title">Latest Flagship Report</h2>
+        </div>
+
+        <div class="featured-report-card">
+          <div class="featured-report-image">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="featured-report-content">
+            <span class="featured-report-badge">Flagship Report</span>
+            <h3 class="featured-report-title">
+              Navigating Africa's Infrastructure Investment Landscape in 2025
+            </h3>
+            <p class="featured-report-excerpt">
+              Our comprehensive 120-page analysis examines the evolving infrastructure investment climate across Sub-Saharan Africa. This report provides deep insights into regulatory changes, emerging opportunities, and strategic considerations for investors across transport, energy, and digital infrastructure sectors. Key highlights include analysis of $50B+ in planned projects, regulatory frameworks across 16 countries, and detailed risk assessments.
+            </p>
+            <div class="featured-report-meta">
+              <div class="meta-item">
+                <i class="fas fa-user"></i>
+                <span>Prof. Edward Opoku Adusei</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-calendar"></i>
+                <span>January 15, 2025</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-file-pdf"></i>
+                <span>120 Pages</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-clock"></i>
+                <span>45 min read</span>
+              </div>
+            </div>
+            <a href="#" class="featured-report-cta">
+              Purchase Full Report - $499
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== AFRICA NEWS ========== -->
-    <section class="africa-news-section">
+    <!-- ========== REPORT CARDS GRID ========== -->
+    <section class="reports-grid-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-pre">Latest from Africa</span>
-          <h2 class="section-title">Breaking News & Business Headlines</h2>
+          <span class="section-pre">Research Library</span>
+          <h2 class="section-title">Latest Analysis & Market Updates</h2>
           <p class="section-desc">
-            Stay informed with the latest developments across African markets and economies
+            Access our comprehensive research library featuring sector snapshots, market entry guides, and economic commentary
           </p>
         </div>
 
-        <div id="newsContainer">
-          <div class="news-loading">
-            <i class="fas fa-spinner fa-spin" style="font-size: 48px; color: var(--brand-accent);"></i>
-            <p style="margin-top: 20px;">Loading latest African news...</p>
+        <div class="reports-grid">
+          <!-- Report Card 1 -->
+          <div class="report-card" data-category="sector-snapshots">
+            <div class="report-card-header">
+              <span class="report-card-category">Sector Snapshot</span>
+              <h4 class="report-card-title">
+                Ghana Renewable Energy Market: Investment Opportunities in Solar & Wind
+              </h4>
+            </div>
+            <div class="report-card-body">
+              <p class="report-card-excerpt">
+                Ghana's renewable energy sector is experiencing unprecedented growth, driven by government incentives and declining technology costs. This quarterly snapshot examines 15 major projects totaling $2.3B in planned investment, regulatory developments including the new Renewable Energy Act, and detailed analysis of solar and wind opportunities across all 16 regions. Our on-the-ground research identifies key barriers to entry and strategic partnership opportunities...
+              </p>
+              <div class="report-card-meta">
+                <div class="report-card-author">
+                  <i class="fas fa-user-circle"></i>
+                  <span>Maxwell Danquah</span>
+                </div>
+                <div class="report-card-date">Dec 20, 2024</div>
+              </div>
+              <div class="report-card-actions">
+                <a href="#" class="report-card-preview" onclick="openPreview(event, 'report1')">
+                  <i class="fas fa-eye"></i>
+                  Preview
+                </a>
+                <a href="https://buy.stripe.com/your-product-link" class="report-card-cta">
+                  Purchase - $199
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Report Card 2 -->
+          <div class="report-card" data-category="market-entry">
+            <div class="report-card-header">
+              <span class="report-card-category">Market Entry Guide</span>
+              <h4 class="report-card-title">
+                Investor's Guide to Nigerian Fintech: Regulatory Framework & Market Entry
+              </h4>
+            </div>
+            <div class="report-card-body">
+              <p class="report-card-excerpt">
+                Nigeria's fintech sector raised $1.2B in 2024, making it Africa's largest market. This comprehensive guide provides detailed analysis of regulatory requirements, licensing procedures, partnership strategies, and go-to-market recommendations. Includes exclusive interviews with CBN officials, successful case studies from 12 international entrants, and step-by-step market entry roadmap. Essential reading for any investor considering the Nigerian market...
+              </p>
+              <div class="report-card-meta">
+                <div class="report-card-author">
+                  <i class="fas fa-user-circle"></i>
+                  <span>Prof. Edward Opoku Adusei</span>
+                </div>
+                <div class="report-card-date">Dec 18, 2024</div>
+              </div>
+              <div class="report-card-actions">
+                <a href="#" class="report-card-preview" onclick="openPreview(event, 'report2')">
+                  <i class="fas fa-eye"></i>
+                  Preview
+                </a>
+                <a href="https://buy.stripe.com/your-product-link" class="report-card-cta">
+                  Purchase - $299
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Report Card 3 -->
+          <div class="report-card" data-category="economic">
+            <div class="report-card-header">
+              <span class="report-card-category">Economic Commentary</span>
+              <h4 class="report-card-title">
+                AfCFTA Implementation Update: Progress, Challenges & Investment Implications
+              </h4>
+            </div>
+            <div class="report-card-body">
+              <p class="report-card-excerpt">
+                The African Continental Free Trade Area (AfCFTA) shows early promise with 15% increase in intra-African trade volumes in its first operational year. This monthly brief analyzes implementation progress across 54 member states, identifies emerging trade corridors, examines tariff elimination schedules, and provides forward-looking analysis of investment opportunities created by regional integration. Includes exclusive data from customs unions and trade statistics...
+              </p>
+              <div class="report-card-meta">
+                <div class="report-card-author">
+                  <i class="fas fa-user-circle"></i>
+                  <span>Maxwell Danquah</span>
+                </div>
+                <div class="report-card-date">Dec 15, 2024</div>
+              </div>
+              <div class="report-card-actions">
+                <a href="#" class="report-card-preview" onclick="openPreview(event, 'report3')">
+                  <i class="fas fa-eye"></i>
+                  Preview
+                </a>
+                <a href="https://buy.stripe.com/your-product-link" class="report-card-cta">
+                  Purchase - $149
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Report Card 4 -->
+          <div class="report-card" data-category="deal-flow">
+            <div class="report-card-header">
+              <span class="report-card-category">Deal Flow Report</span>
+              <h4 class="report-card-title">
+                Sub-Saharan Africa M&A Activity: Q4 2024 Review & 2025 Outlook
+              </h4>
+            </div>
+            <div class="report-card-body">
+              <p class="report-card-excerpt">
+                Q4 2024 saw $8.7B in announced M&A transactions across Sub-Saharan Africa, up 23% year-over-year. This quarterly report provides anonymized analysis of deal structures, valuation multiples by sector, investor profiles, and emerging trends. Features detailed breakdown of 45 significant transactions, analysis of cross-border deals, examination of buyer and seller dynamics, and forward-looking predictions for 2025 activity based on our pipeline intelligence...
+              </p>
+              <div class="report-card-meta">
+                <div class="report-card-author">
+                  <i class="fas fa-user-circle"></i>
+                  <span>Research Team</span>
+                </div>
+                <div class="report-card-date">Dec 10, 2024</div>
+              </div>
+              <div class="report-card-actions">
+                <a href="#" class="report-card-preview" onclick="openPreview(event, 'report4')">
+                  <i class="fas fa-eye"></i>
+                  Preview
+                </a>
+                <a href="https://buy.stripe.com/your-product-link" class="report-card-cta">
+                  Purchase - $399
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Report Card 5 -->
+          <div class="report-card" data-category="sector-snapshots">
+            <div class="report-card-header">
+              <span class="report-card-category">Sector Snapshot</span>
+              <h4 class="report-card-title">
+                East African Agriculture Tech: Investment Landscape & Growth Drivers
+              </h4>
+            </div>
+            <div class="report-card-body">
+              <p class="report-card-excerpt">
+                Agriculture technology startups in Kenya, Tanzania, and Uganda raised $340M in 2024, representing 156% growth. This sector snapshot examines the evolving agtech ecosystem, profiles 20+ high-growth companies, analyzes supply chain digitization opportunities, and identifies white space for new entrants. Includes exclusive data on farmer adoption rates, technology penetration by crop type, and detailed competitive landscape analysis across digital payments, farm management, and supply chain solutions...
+              </p>
+              <div class="report-card-meta">
+                <div class="report-card-author">
+                  <i class="fas fa-user-circle"></i>
+                  <span>Maxwell Danquah</span>
+                </div>
+                <div class="report-card-date">Nov 28, 2024</div>
+              </div>
+              <div class="report-card-actions">
+                <a href="#" class="report-card-preview" onclick="openPreview(event, 'report5')">
+                  <i class="fas fa-eye"></i>
+                  Preview
+                </a>
+                <a href="https://buy.stripe.com/your-product-link" class="report-card-cta">
+                  Purchase - $199
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Report Card 6 -->
+          <div class="report-card" data-category="market-entry">
+            <div class="report-card-header">
+              <span class="report-card-category">Market Entry Guide</span>
+              <h4 class="report-card-title">
+                Doing Business in Ghana: Complete Investor's Handbook 2025
+              </h4>
+            </div>
+            <div class="report-card-body">
+              <p class="report-card-excerpt">
+                Our comprehensive 85-page guide to establishing and operating a business in Ghana covers legal structures, tax optimization strategies, labor law compliance, real estate considerations, and banking relationships. Based on 20+ years of combined team experience and featuring insights from successful international companies. Includes templates for incorporation documents, sample investment agreements, and detailed checklists for regulatory compliance. An essential resource for market entry planning...
+              </p>
+              <div class="report-card-meta">
+                <div class="report-card-author">
+                  <i class="fas fa-user-circle"></i>
+                  <span>Prof. Edward Opoku Adusei</span>
+                </div>
+                <div class="report-card-date">Nov 15, 2024</div>
+              </div>
+              <div class="report-card-actions">
+                <a href="#" class="report-card-preview" onclick="openPreview(event, 'report6')">
+                  <i class="fas fa-eye"></i>
+                  Preview
+                </a>
+                <a href="https://buy.stripe.com/your-product-link" class="report-card-cta">
+                  Purchase - $349
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FREE BLOG SECTION ========== -->
+    <section class="free-blog-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pre">Free Resources</span>
+          <h2 class="section-title">Latest Blog Posts & Market Commentary</h2>
+          <p class="section-desc">
+            Access our free insights, market updates, and expert commentary on African markets
+          </p>
+        </div>
+
+        <div class="blog-cards-grid">
+          <!-- Blog Card 1 -->
+          <div class="blog-card">
+            <div class="blog-card-image">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-badge">Free Analysis</span>
+              <h4 class="blog-card-title">
+                Understanding Ghana's Economic Outlook for 2025
+              </h4>
+              <p class="blog-card-excerpt">
+                Ghana's economy shows resilience with 3.2% GDP growth surpassing expectations. Explore the key drivers behind this performance and what it means for investors.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-author">Prof. Edward Opoku Adusei</span>
+                <a href="#" class="blog-card-link">
+                  Read More <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Card 2 -->
+          <div class="blog-card">
+            <div class="blog-card-image">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-badge">Expert Insight</span>
+              <h4 class="blog-card-title">
+                5 Key Considerations for Entering African Markets
+              </h4>
+              <p class="blog-card-excerpt">
+                From regulatory frameworks to cultural nuances, learn the essential factors every investor should consider before expanding into African markets.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-author">Maxwell Danquah</span>
+                <a href="#" class="blog-card-link">
+                  Read More <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Card 3 -->
+          <div class="blog-card">
+            <div class="blog-card-image">
+              <i class="fas fa-globe-africa"></i>
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-badge">Market Update</span>
+              <h4 class="blog-card-title">
+                AfCFTA Progress: What's Working and What's Not
+              </h4>
+              <p class="blog-card-excerpt">
+                A candid assessment of the African Continental Free Trade Area's implementation, highlighting successes, challenges, and opportunities for investors.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-author">Research Team</span>
+                <a href="#" class="blog-card-link">
+                  Read More <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ========== PREVIEW MODAL ========== -->
+    <div class="preview-modal" id="previewModal">
+      <div class="preview-modal-content">
+        <div class="preview-modal-header">
+          <button class="preview-modal-close" onclick="closePreview()">×</button>
+          <span class="preview-modal-badge" id="modalBadge">Report Preview</span>
+          <h2 class="preview-modal-title" id="modalTitle">Report Title</h2>
+          <div class="preview-modal-meta">
+            <div class="meta-item">
+              <i class="fas fa-user"></i>
+              <span id="modalAuthor">Author</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i>
+              <span id="modalDate">Date</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-file-pdf"></i>
+              <span id="modalPages">Pages</span>
+            </div>
+          </div>
+        </div>
+        <div class="preview-modal-body">
+          <div class="preview-content preview-blur" id="modalContent">
+            <!-- Content will be populated by JavaScript -->
+          </div>
+          <div class="preview-cta-box">
+            <h4>Get the Full Report</h4>
+            <p>Access the complete analysis, data, and insights</p>
+            <div class="price" id="modalPrice">$199</div>
+            <a href="https://buy.stripe.com/your-product-link" class="preview-purchase-btn" id="modalPurchaseBtn">
+              <i class="fas fa-shopping-cart"></i>
+              Purchase Full Report
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
@@ -1034,7 +1982,7 @@
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="research-hub.html">Insights</a>
-            <a href="about.html">Our Team</a>
+            <a href="about.html#team">Our Team</a>
             <a href="contact-us.html">Contact</a>
           </div>
 
@@ -1059,212 +2007,369 @@
 
     <!-- JavaScript -->
     <script>
-      // Mobile Menu
+      // Mobile Menu Toggle
       const mobileBtn = document.getElementById('mobileMenuBtn');
       const mobileNav = document.getElementById('mobileNav');
+      const mobileClose = document.getElementById('mobileCloseBtn');
+      const submenuToggles = document.querySelectorAll('.submenu-toggle');
 
       mobileBtn.addEventListener('click', () => {
         mobileNav.classList.toggle('active');
-        mobileBtn.innerHTML = mobileNav.classList.contains('active') ? '✕' : '&#9776;';
         document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
       });
 
+      mobileClose.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      // Close mobile nav when clicking outside
       document.addEventListener('click', (e) => {
         if (mobileNav.classList.contains('active') && 
             !mobileNav.contains(e.target) && 
             !mobileBtn.contains(e.target)) {
           mobileNav.classList.remove('active');
-          mobileBtn.innerHTML = '&#9776;';
           document.body.style.overflow = '';
         }
       });
 
-      // Mobile submenu toggles
-      const submenuToggles = document.querySelectorAll('.submenu-toggle');
       submenuToggles.forEach(toggle => {
         toggle.addEventListener('click', (e) => {
           e.preventDefault();
-          const submenuId = 'submenu-' + toggle.getAttribute('data-submenu');
-          const submenu = document.getElementById(submenuId);
-          const isActive = submenu.classList.contains('active');
-          
-          document.querySelectorAll('.mobile-submenu').forEach(sm => {
-            sm.classList.remove('active');
-          });
-          document.querySelectorAll('.submenu-toggle').forEach(st => {
-            st.classList.remove('active');
-          });
-          
-          if (!isActive) {
-            submenu.classList.add('active');
-            toggle.classList.add('active');
-          }
+          const submenu = toggle.nextElementSibling;
+          const isOpen = submenu.style.maxHeight && submenu.style.maxHeight !== '0px';
+          submenu.style.maxHeight = isOpen ? '0' : submenu.scrollHeight + 'px';
+          toggle.textContent = toggle.textContent.includes('+')
+            ? toggle.textContent.replace('+', '−')
+            : toggle.textContent.replace('−', '+');
         });
       });
 
-      // Current Year
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      // Filter functionality
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const reportCards = document.querySelectorAll('.report-card');
 
-      // ========== FETCH FX RATES ==========
-      async function fetchFXRates() {
-        const container = document.getElementById('fxRatesContainer');
-        
-        try {
-          // African currencies to track
-          const currencies = ['USD', 'CAD', 'KES', 'GHS', 'EGP'];
-          const ratesHTML = [];
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterBtns.forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          btn.classList.add('active');
 
-          for (const currency of currencies) {
-            try {
-              const response = await fetch(`https://api.frankfurter.app/latest?from=USD&to=${currency}`);
-              const data = await response.json();
-              
-              if (data.rates && data.rates[currency]) {
-                const currencyNames = {
-                  'ZAR': 'South African Rand',
-                  'NGN': 'Nigerian Naira',
-                  'KES': 'Kenyan Shilling',
-                  'GHS': 'Ghanaian Cedi',
-                  'EGP': 'Egyptian Pound'
-                };
+          const filter = btn.getAttribute('data-filter');
 
-                ratesHTML.push(`
-                  <div class="fx-card">
-                    <div class="fx-pair">USD/${currency}</div>
-                    <div class="fx-rate">${data.rates[currency].toFixed(4)}</div>
-                    <div class="fx-date">${currencyNames[currency]}</div>
-                    <div class="fx-date" style="margin-top: 8px;">Updated: ${data.date}</div>
-                  </div>
-                `);
-              }
-            } catch (err) {
-              console.error(`Error fetching ${currency}:`, err);
+          reportCards.forEach(card => {
+            if (filter === 'all') {
+              card.style.display = 'flex';
+            } else {
+              const category = card.getAttribute('data-category');
+              card.style.display = category === filter ? 'flex' : 'none';
             }
-          }
-
-          if (ratesHTML.length > 0) {
-            container.innerHTML = `<div class="fx-grid">${ratesHTML.join('')}</div>`;
-          } else {
-            container.innerHTML = `
-              <div class="fx-error">
-                <i class="fas fa-exclamation-triangle" style="font-size: 32px; margin-bottom: 12px;"></i>
-                <p>Unable to load exchange rates. Please try again later.</p>
-              </div>
-            `;
-          }
-        } catch (error) {
-          console.error('Error fetching FX rates:', error);
-          container.innerHTML = `
-            <div class="fx-error">
-              <i class="fas fa-exclamation-triangle" style="font-size: 32px; margin-bottom: 12px;"></i>
-              <p>Unable to load exchange rates. Please check your connection and try again.</p>
-            </div>
-          `;
-        }
-      }
-
-      // ========== FETCH BBC AFRICA NEWS ==========
-      async function fetchAfricaNews() {
-        const container = document.getElementById('newsContainer');
-        
-        try {
-          const response = await fetch('https://feeds.bbci.co.uk/news/world/africa/rss.xml');
-          const text = await response.text();
-          
-          const parser = new DOMParser();
-          const xml = parser.parseFromString(text, 'text/xml');
-          
-          const items = xml.querySelectorAll('item');
-          
-          if (items.length === 0) {
-            throw new Error('No news items found');
-          }
-
-          const newsHTML = [];
-          
-          // Get first 12 news items
-          Array.from(items).slice(0, 12).forEach((item, index) => {
-            const title = item.querySelector('title')?.textContent || 'No title';
-            const description = item.querySelector('description')?.textContent || 'No description available';
-            const link = item.querySelector('link')?.textContent || '#';
-            const pubDate = item.querySelector('pubDate')?.textContent || '';
-            const imageUrl = item.querySelector('media\\:thumbnail, thumbnail')?.getAttribute('url') || '';
-            
-            // Format date
-            let formattedDate = 'Recently';
-            if (pubDate) {
-              const date = new Date(pubDate);
-              const now = new Date();
-              const diffTime = Math.abs(now - date);
-              const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-              const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
-              
-              if (diffDays === 0) {
-                if (diffHours === 0) {
-                  formattedDate = 'Just now';
-                } else {
-                  formattedDate = `${diffHours}h ago`;
-                }
-              } else if (diffDays === 1) {
-                formattedDate = 'Yesterday';
-              } else if (diffDays < 7) {
-                formattedDate = `${diffDays} days ago`;
-              } else {
-                formattedDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-              }
-            }
-
-            newsHTML.push(`
-              <div class="news-card" onclick="window.open('${link}', '_blank')">
-                <div class="news-card-image">
-                  ${imageUrl ? `<img src="${imageUrl}" alt="${title}" onerror="this.parentElement.innerHTML='<i class=\\'fas fa-newspaper\\' style=\\'font-size: 64px; color: var(--brand-accent); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);\\' ></i>'">` : `<i class="fas fa-newspaper" style="font-size: 64px; color: var(--brand-accent); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>`}
-                  <span class="news-card-badge">BBC Africa</span>
-                </div>
-                <div class="news-card-content">
-                  <h4 class="news-card-title">${title}</h4>
-                  <p class="news-card-excerpt">${description}</p>
-                  <div class="news-card-footer">
-                    <span class="news-card-date">
-                      <i class="far fa-clock"></i>
-                      ${formattedDate}
-                    </span>
-                    <span class="news-card-link">
-                      Read More
-                      <i class="fas fa-arrow-right"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            `);
           });
-
-          container.innerHTML = `<div class="news-grid">${newsHTML.join('')}</div>`;
-          
-        } catch (error) {
-          console.error('Error fetching Africa news:', error);
-          container.innerHTML = `
-            <div class="news-error">
-              <i class="fas fa-exclamation-triangle" style="font-size: 48px; margin-bottom: 16px;"></i>
-              <p><strong>Unable to load news feed</strong></p>
-              <p style="margin-top: 12px;">Please check your connection and try refreshing the page.</p>
-            </div>
-          `;
+        });
+      });
+// Preview Modal Functionality
+      const reportData = {
+        report1: {
+          badge: 'Sector Snapshot',
+          title: 'Ghana Renewable Energy Market: Investment Opportunities in Solar & Wind',
+          author: 'Maxwell Danquah',
+          date: 'Dec 20, 2024',
+          pages: '45 Pages',
+          price: '$199',
+          stripeLink: 'https://buy.stripe.com/test_ghana_renewable',
+          content: `
+            <h3>Executive Summary</h3>
+            <p>Ghana's renewable energy sector is experiencing unprecedented growth, driven by government incentives and declining technology costs. This quarterly snapshot examines 15 major projects totaling $2.3B in planned investment, regulatory developments including the new Renewable Energy Act, and detailed analysis of solar and wind opportunities across all 16 regions.</p>
+            
+            <h3>Market Overview</h3>
+            <p>The Ghanaian government has set an ambitious target of 10% renewable energy in the national energy mix by 2030, up from the current 2.5%. This commitment, coupled with favorable solar irradiation levels (averaging 4.5-6.5 kWh/m²/day) and improving wind resources in coastal regions, creates significant opportunities for international investors.</p>
+            
+            <h4>Key Market Drivers:</h4>
+            <ul>
+              <li>Government feed-in tariff program offering guaranteed returns for 20 years</li>
+              <li>Net metering framework enabling distributed generation</li>
+              <li>Declining LCOE for solar PV (now below $0.05/kWh in optimal locations)</li>
+              <li>Growing industrial demand for reliable, cost-effective power</li>
+              <li>International development finance institution support</li>
+            </ul>
+            
+            <h3>Investment Landscape</h3>
+            <p>Our analysis identifies $2.3B in announced renewable energy projects across Ghana, with solar accounting for 65% of planned capacity and wind comprising 25%. The remaining 10% consists of small-scale hydro and biomass projects.</p>
+            
+            <h4>Major Projects Under Development:</h4>
+            <ul>
+              <li><strong>Bui Solar Project (400MW)</strong> - $850M investment by Chinese consortium</li>
+              <li><strong>Ayitepa Wind Farm (225MW)</strong> - $320M from European developers</li>
+              <li><strong>Northern Solar Belt Initiative</strong> - Multiple projects totaling 300MW</li>
+            </ul>
+            
+            <p><em>Purchase the full report to access detailed project profiles, financial modeling, regulatory analysis, and market entry strategies...</em></p>
+          `
+        },
+        report2: {
+          badge: 'Market Entry Guide',
+          title: "Investor's Guide to Nigerian Fintech: Regulatory Framework & Market Entry",
+          author: 'Prof. Edward Opoku Adusei',
+          date: 'Dec 18, 2024',
+          pages: '68 Pages',
+          price: '$299',
+          stripeLink: 'https://buy.stripe.com/test_nigeria_fintech',
+          content: `
+            <h3>Introduction</h3>
+            <p>Nigeria's fintech sector raised $1.2B in 2024, making it Africa's largest and most dynamic market. With over 200 licensed fintech companies and a population of 220 million (60% under 25 years old), Nigeria presents unparalleled opportunities for investors willing to navigate its complex regulatory environment.</p>
+            
+            <h3>Regulatory Landscape</h3>
+            <p>The Central Bank of Nigeria (CBN) has implemented a comprehensive regulatory framework for fintech operations, including specific licenses for payment service providers, mobile money operators, and digital lenders. Understanding this framework is critical for successful market entry.</p>
+            
+            <h4>Key Regulatory Requirements:</h4>
+            <ul>
+              <li><strong>Payment Service Bank (PSB) License:</strong> Minimum capital of ₦5B ($11M USD)</li>
+              <li><strong>Mobile Money Operator License:</strong> ₦2B minimum capital requirement</li>
+              <li><strong>Switching and Processing License:</strong> For payment infrastructure providers</li>
+              <li><strong>Super Agent License:</strong> For agent network operators</li>
+            </ul>
+            
+            <h3>Market Entry Strategies</h3>
+            <p>Our research, based on interviews with 12 successful international fintech companies that have entered the Nigerian market, identifies three primary entry strategies:</p>
+            
+            <h4>1. Partnership with Existing Licensed Entities</h4>
+            <p>This approach significantly reduces time-to-market and regulatory burden. Companies like Stripe and Paystack successfully used this strategy, partnering with licensed banks to offer payment processing services while building their own regulatory approvals.</p>
+            
+            <h4>2. Direct Licensing Application</h4>
+            <p>For companies with significant resources and long-term commitment, applying directly for regulatory licenses provides maximum control and independence. Timeline: 12-18 months for approval.</p>
+            
+            <p><em>The full report includes detailed case studies, licensing procedures, partnership templates, and go-to-market strategies...</em></p>
+          `
+        },
+        report3: {
+          badge: 'Economic Commentary',
+          title: 'AfCFTA Implementation Update: Progress, Challenges & Investment Implications',
+          author: 'Maxwell Danquah',
+          date: 'Dec 15, 2024',
+          pages: '32 Pages',
+          price: '$149',
+          stripeLink: 'https://buy.stripe.com/test_afcfta_update',
+          content: `
+            <h3>Executive Summary
+            <h3>Executive Summary</h3>
+            <p>The African Continental Free Trade Area (AfCFTA) shows early promise with a 15% increase in intra-African trade volumes in its first operational year. This monthly brief analyzes implementation progress across 54 member states, identifies emerging trade corridors, examines tariff elimination schedules, and provides forward-looking analysis of investment opportunities created by regional integration.</p>
+            
+            <h3>Implementation Progress</h3>
+            <p>As of Q4 2024, 48 of 54 member states have ratified the AfCFTA agreement, with trading under preferential terms now operational in 42 countries. However, implementation varies significantly by region and country.</p>
+            
+            <h4>Regional Progress:</h4>
+            <ul>
+              <li><strong>West Africa (ECOWAS):</strong> Most advanced implementation, building on existing regional integration</li>
+              <li><strong>East Africa (EAC):</strong> Strong progress in harmonized customs procedures</li>
+              <li><strong>Southern Africa (SADC):</strong> Mixed results, with some bilateral trade increasing significantly</li>
+              <li><strong>Central Africa (ECCAS):</strong> Implementation lagging due to infrastructure challenges</li>
+              <li><strong>North Africa:</strong> Slower adoption, though Egypt and Morocco showing leadership</li>
+            </ul>
+            
+            <h3>Emerging Trade Corridors</h3>
+            <p>Our analysis identifies several trade corridors experiencing accelerated growth under AfCFTA:</p>
+            
+            <h4>High-Growth Corridors:</h4>
+            <ul>
+              <li><strong>Lagos-Abidjan-Accra:</strong> 28% increase in manufactured goods trade</li>
+              <li><strong>Nairobi-Kampala-Kigali:</strong> 22% growth in agricultural products</li>
+              <li><strong>Johannesburg-Maputo:</strong> Infrastructure and logistics services expansion</li>
+            </ul>
+            
+            <h3>Investment Implications</h3>
+            <p>The gradual implementation of AfCFTA creates specific opportunities for investors in manufacturing, logistics, and trade facilitation services. Companies positioning for continental-scale operations can gain first-mover advantages.</p>
+            
+            <p><em>Access the full report for detailed tariff schedules, country-by-country analysis, and investment recommendations...</em></p>
+          `
+        },
+        report4: {
+          badge: 'Deal Flow Report',
+          title: 'Sub-Saharan Africa M&A Activity: Q4 2024 Review & 2025 Outlook',
+          author: 'Research Team',
+          date: 'Dec 10, 2024',
+          pages: '58 Pages',
+          price: '$399',
+          stripeLink: 'https://buy.stripe.com/test_ma_quarterly',
+          content: `
+            <h3>Quarterly Overview</h3>
+            <p>Q4 2024 saw $8.7B in announced M&A transactions across Sub-Saharan Africa, up 23% year-over-year. This quarterly report provides anonymized analysis of deal structures, valuation multiples by sector, investor profiles, and emerging trends.</p>
+            
+            <h3>Deal Volume by Sector</h3>
+            <p>The distribution of M&A activity in Q4 2024 reflects continued investor interest in technology, financial services, and infrastructure sectors:</p>
+            
+            <h4>Top Sectors by Deal Value:</h4>
+            <ul>
+              <li><strong>Financial Services:</strong> $2.8B (32% of total deal value) - 12 transactions</li>
+              <li><strong>Technology/Telecom:</strong> $2.1B (24%) - 18 transactions</li>
+              <li><strong>Energy & Infrastructure:</strong> $1.9B (22%) - 8 transactions</li>
+              <li><strong>Consumer Goods:</strong> $1.2B (14%) - 15 transactions</li>
+              <li><strong>Healthcare:</strong> $0.7B (8%) - 9 transactions</li>
+            </ul>
+            
+            <h3>Notable Transactions</h3>
+            <p>Our analysis covers 45 significant transactions in Q4 2024. Here we highlight three representative deals across different sectors:</p>
+            
+            <h4>Case Study: Fintech Acquisition</h4>
+            <p>A European payment processor acquired a Nigerian fintech platform for $425M (12.5x revenue, 28x EBITDA). The target had 8.5M active users and was processing $2.3B in annual transaction volume. Deal structure included 70% cash and 30% equity with earnout provisions tied to user growth.</p>
+            
+            <h4>Case Study: Infrastructure Investment</h4>
+            <p>International infrastructure fund acquired 40% stake in East African toll road portfolio for $380M (8.2x EBITDA). The transaction valued the entire portfolio at $950M, representing a 15% premium to independent valuation.</p>
+            
+            <h3>Valuation Multiples by Sector</h3>
+            <p>Median valuation multiples in Q4 2024:</p>
+            <ul>
+              <li><strong>Fintech:</strong> 10.5x revenue, 25x EBITDA</li>
+              <li><strong>E-commerce:</strong> 1.8x revenue, 18x EBITDA</li>
+              <li><strong>Healthcare Services:</strong> 1.2x revenue, 12x EBITDA</li>
+              <li><strong>Infrastructure:</strong> 8.5x EBITDA</li>
+            </ul>
+            
+            <p><em>The complete report includes detailed analysis of all 45 transactions, buyer/seller profiles, and 2025 outlook...</em></p>
+          `
+        },
+        report5: {
+          badge: 'Sector Snapshot',
+          title: 'East African Agriculture Tech: Investment Landscape & Growth Drivers',
+          author: 'Maxwell Danquah',
+          date: 'Nov 28, 2024',
+          pages: '41 Pages',
+          price: '$199',
+          stripeLink: 'https://buy.stripe.com/test_agtech_eastafrica',
+          content: `
+            <h3>Market Overview</h3>
+            <p>Agriculture technology startups in Kenya, Tanzania, and Uganda raised $340M in 2024, representing 156% growth from 2023. This sector snapshot examines the evolving agtech ecosystem, profiles 20+ high-growth companies, analyzes supply chain digitization opportunities, and identifies white space for new entrants.</p>
+            
+            <h3>Ecosystem Analysis</h3>
+            <p>The East African agtech sector has matured significantly, moving beyond basic mobile payment solutions to sophisticated farm management platforms, IoT sensor networks, and AI-driven crop analytics.</p>
+            
+            <h4>Key Segments:</h4>
+            <ul>
+              <li><strong>Input Supply Digitization:</strong> Digital platforms connecting farmers with seed, fertilizer, and equipment suppliers</li>
+              <li><strong>Farm Management Software:</strong> Mobile and web-based tools for crop planning, pest management, and yield optimization</li>
+              <li><strong>Supply Chain & Logistics:</strong> Solutions connecting farmers to markets, including cold chain and transportation</li>
+              <li><strong>Financial Services:</strong> Embedded lending, insurance, and payment solutions for smallholder farmers</li>
+            </ul>
+            
+            <h3>Leading Companies</h3>
+            <p>Our analysis profiles 20+ high-growth agtech companies operating in East Africa. Here are three representative examples:</p>
+            
+            <h4>Twiga Foods (Kenya)</h4>
+            <p>B2B food distribution platform connecting farmers to urban retailers. 2024 metrics: $120M in GMV, 8,000 farmers, 10,000+ retailers. Recent $30M Series C led by international agtech investors.</p>
+            
+            <h4>FarmDrive (Kenya)</h4>
+            <p>Alternative credit scoring for smallholder farmers using satellite imagery and mobile data. Has facilitated $45M in loans to 250,000+ farmers. Partnerships with major commercial banks.</p>
+            
+            <h3>Investment Opportunities</h3>
+            <p>Despite strong growth, significant white space remains in post-harvest processing, mechanization-as-a-service, and specialized crop management for high-value crops like coffee and horticulture.</p>
+            
+            <p><em>Full report includes company profiles, competitive analysis, farmer adoption data, and investment recommendations...</em></p>
+          `
+        },
+        report6: {
+          badge: 'Market Entry Guide',
+          title: "Doing Business in Ghana: Complete Investor's Handbook 2025",
+          author: 'Prof. Edward Opoku Adusei',
+          date: 'Nov 15, 2024',
+          pages: '85 Pages',
+          price: '$349',
+          stripeLink: 'https://buy.stripe.com/test_ghana_handbook',
+          content: `
+            <h3>Introduction</h3>
+            <p>This comprehensive 85-page guide to establishing and operating a business in Ghana covers legal structures, tax optimization strategies, labor law compliance, real estate considerations, and banking relationships. Based on 20+ years of combined team experience and featuring insights from successful international companies.</p>
+            
+            <h3>Legal Structures & Registration</h3>
+            <p>Ghana offers several business structure options for foreign investors, each with distinct advantages and requirements:</p>
+            
+            <h4>Business Structure Options:</h4>
+            <ul>
+              <li><strong>Private Limited Company (Ltd):</strong> Most common for foreign investors, requires minimum 2 shareholders and 1 director</li>
+              <li><strong>Branch Office:</strong> Extension of foreign parent company, simpler but less tax-efficient</li>
+              <li><strong>Representative Office:</strong> For market research and liaison activities only, cannot generate revenue</li>
+              <li><strong>External Company:</strong> Foreign company registered to do business in Ghana</li>
+            </ul>
+            
+            <h3>Registration Process</h3>
+            <p>The Ghana Registrar General's Department has streamlined company registration, though several steps remain:</p>
+            
+            <h4>Step-by-Step Registration:</h4>
+            <ul>
+              <li><strong>Day 1-2:</strong> Name reservation at Registrar General's Department (GHS 100)</li>
+              <li><strong>Day 3-5:</strong> Prepare incorporation documents (Articles of Association, Statement of Particulars)</li>
+              <li><strong>Day 6-7:</strong> Submit incorporation application (GHS 250 + 0.5% of stated capital)</li>
+              <li><strong>Day 8-10:</strong> Receive Certificate of Incorporation</li>
+              <li><strong>Day 11-15:</strong> Register for TIN (Tax Identification Number) with Ghana Revenue Authority</li>
+              <li><strong>Day 16-21:</strong> Register with Social Security and National Insurance Trust (SSNIT)</li>
+            </ul>
+            
+            <h3>Tax Considerations</h3>
+            <p>Ghana's corporate tax environment offers several incentives for foreign investors, particularly in priority sectors like manufacturing, agriculture, and technology:</p>
+            
+            <h4>Corporate Tax Rates:</h4>
+            <ul>
+              <li><strong>Standard Corporate Tax:</strong> 25% on net profits</li>
+              <li><strong>Free Zone Enterprises:</strong> 0% for first 10 years, 8% thereafter</li>
+              <li><strong>Hotels & Tourism:</strong> 22% corporate tax rate</li>
+              <li><strong>Agricultural Processing:</strong> 1% for first 7 years</li>
+            </ul>
+            
+            <h3>Labor Law Compliance</h3>
+            <p>The Ghana Labour Act, 2003 (Act 651) governs employment relationships. Key requirements include:</p>
+            
+            <h4>Employment Essentials:</h4>
+            <ul>
+              <li>Written employment contracts mandatory for all employees</li>
+              <li>Minimum wage: GHS 14.88 per day (subject to annual revision)</li>
+              <li>15 working days annual leave minimum</li>
+              <li>3 months probation period standard</li>
+              <li>Mandatory SSNIT contributions: 13% employer, 5.5% employee</li>
+            </ul>
+            
+            <p><em>Complete guide includes sample documents, tax optimization strategies, real estate considerations, and banking relationships...</em></p>
+          `
         }
+      };
+
+      function openPreview(event, reportId) {
+        event.preventDefault();
+        const report = reportData[reportId];
+        
+        document.getElementById('modalBadge').textContent = report.badge;
+        document.getElementById('modalTitle').textContent = report.title;
+        document.getElementById('modalAuthor').textContent = report.author;
+        document.getElementById('modalDate').textContent = report.date;
+        document.getElementById('modalPages').textContent = report.pages;
+        document.getElementById('modalPrice').textContent = report.price;
+        document.getElementById('modalContent').innerHTML = report.content;
+        document.getElementById('modalPurchaseBtn').href = report.stripeLink;
+        
+        document.getElementById('previewModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
       }
 
-      // Load data on page load
-      window.addEventListener('DOMContentLoaded', () => {
-        fetchFXRates();
-        fetchAfricaNews();
-        
-        // Refresh FX rates every 5 minutes
-        setInterval(fetchFXRates, 5 * 60 * 1000);
-        
-        // Refresh news every 10 minutes
-        setInterval(fetchAfricaNews, 10 * 60 * 1000);
+      function closePreview() {
+        document.getElementById('previewModal').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Close modal when clicking outside
+      document.getElementById('previewModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closePreview();
+        }
       });
 
-      // Smooth Scroll
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.getElementById('previewModal').classList.contains('active')) {
+          closePreview();
+        }
+      });
+
+      // Current Year in Footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      // Smooth Scroll for Anchor Links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
