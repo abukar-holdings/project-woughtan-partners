@@ -32,7 +32,7 @@
       <div class="left-header-top">
         <p class="top-details" style="color:var(--topline-color,rgba(255,255,255,0.92));">
           Ready to unlock emerging market opportunities?
-          <a href="contact-us.html" style="color:var(--brand-accent); text-decoration:underline;">Contact Us <i class="fal fa-arrow-right"></i></a>
+          <a href="/contact-us" style="color:var(--brand-accent); text-decoration:underline;">Contact Us <i class="fal fa-arrow-right"></i></a>
         </p>
       </div>
       <div class="right-header-top">
@@ -51,36 +51,36 @@
   <div class="main-header" id="mainHeader">
     <div class="content">
       <div class="header-left">
-        <a class="thumbnail" href="index.html" aria-label="Woughton Global home">
+        <a class="thumbnail" href="/" aria-label="Woughton Global home">
           <img src="assets/images/logo.png" alt="Woughton Global">
         </a>
 
         <!-- ===== Desktop Navigation ===== -->
         <nav class="nav-area" aria-label="Primary navigation" role="navigation">
           <ul class="main-nav-list">
-            <li class="main-nav"><a href="index.html">Home</a></li>
+            <li class="main-nav"><a href="/">Home</a></li>
 
             <li class="main-nav has-dropdown">
               <a href="#">Services</a>
               <ul class="submenu parent-nav">
-                <li><a href="services.html#transactional">Transactional Advisory</a></li>
-                <li><a href="services.html#market-entry">Market Entry</a></li>
-                <li><a href="services.html#capital-markets">Capital Markets</a></li>
+                <li><a href="/services#transactional">Transactional Advisory</a></li>
+                <li><a href="/services#market-entry">Market Entry</a></li>
+                <li><a href="/services#capital-markets">Capital Markets</a></li>
               </ul>
             </li>
 
-            <li class="main-nav"><a href="research-hub.html">Insights</a></li>
+            <li class="main-nav"><a href="/research-hub">Insights</a></li>
 
             <li class="main-nav has-dropdown">
               <a href="#">About</a>
               <ul class="submenu parent-nav">
-                    <li><a href="about.html#our-team">Our Team</a></li>
-                    <li><a href="about.html#our-approach">Our Approach</a></li>
-                    <li><a href="about.html#why-africa">Why Africa</a></li>
+                    <li><a href="/about#our-team">Our Team</a></li>
+                    <li><a href="/about#our-approach">Our Approach</a></li>
+                    <li><a href="/about#why-africa">Why Africa</a></li>
               </ul>
             </li>
 
-            <li class="main-nav"><a href="contact-us.html">Contact</a></li>
+            <li class="main-nav"><a href="/contact-us">Contact</a></li>
           </ul>
         </nav>
 
@@ -93,9 +93,9 @@
 
       <!-- ===== Right Section: CTA + Hamburger ===== -->
       <div class="header-right">
-        <a href="https://calendly.com/your-placeholder" class="rts-btn btn-primary schedule-cta">
+        <button class="rts-btn btn-primary schedule-cta" data-cal-link="woughtonglobal" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'>
           Schedule Consultation
-        </a>
+        </button>
 
         <button id="mobileMenuBtn" class="mobile-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,12 +113,12 @@
     <div class="mobile-nav-inner">
       <button id="mobileCloseBtn" class="mobile-close" aria-label="Close menu">✕</button>
       <ul class="mobile-links" role="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="research-hub.html">Insights</a></li>
-        <li><a href="about.html">Our Team</a></li>
-        <li><a href="contact-us.html">Contact</a></li>
-        <li><a href="https://calendly.com/your-placeholder" class="mobile-cta">Schedule Consultation</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/research-hub">Insights</a></li>
+        <li><a href="/about">Our Team</a></li>
+        <li><a href="/contact-us">Contact</a></li>
+        <li><button class="mobile-cta" data-cal-link="woughtonglobal" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'>Schedule Consultation</button></li>
       </ul>
     </div>
   </nav>
@@ -226,6 +226,7 @@
       font-weight: 700;
       border: none;
       transition: var(--transition);
+      cursor: pointer;
     }
     .rts-btn.btn-primary.schedule-cta:hover {
       background: var(--brand-accent-hover);
@@ -295,6 +296,8 @@
       color: #fff;
       text-align: center;
       margin-top: 8px;
+      border: none;
+      cursor: pointer;
     }
 
     /* Hide nav + show hamburger on small screens */
@@ -417,7 +420,7 @@ function toggleSubmenu(event) {
                         <h3 class="para">Page Not Found</h3>
                         <p>Sorry, the page you seems looking for,
                             has been moved, redirected or removed permanently.</p>
-                        <a href="index.html" class="rts-btn btn-primary">Go Back Home</a>
+                        <a href="/" class="rts-btn btn-primary">Go Back Home</a>
                     </div>
                 </div>
             </div>
@@ -462,7 +465,7 @@ function toggleSubmenu(event) {
                         <p class="disc">
                             Felis consequat magnis est fames sagittis ultrices placerat sodales porttitor quisque.
                         </p>
-                        <a class="rts-btn btn-primary" href="contact-us.html">Contact Us</a>
+                        <a class="rts-btn btn-primary" href="/contact-us">Contact Us</a>
                     </div>
                 </div>
                 <!-- single wized -->
@@ -531,12 +534,12 @@ function toggleSubmenu(event) {
                     </p>
                     <div class="right">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/services">Services</a></li>
 
-                            <li><a href="reports.html">Reports</a></li>
-                            <li><a href="research-hub.html">Research Hub</a></li>
-                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="/reports">Reports</a></li>
+                            <li><a href="/research-hub">Research Hub</a></li>
+                            <li><a href="/contact-us">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -657,6 +660,8 @@ function toggleSubmenu(event) {
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s ease, transform var(--transition);
+    border: none;
+    cursor: pointer;
 }
 
 .footer-two-single-wized a.rts-btn.btn-primary:hover {
@@ -779,6 +784,53 @@ a:visited {
 <script defer src="assets/js/plugins/contact.form.js"></script>
 
 <script defer src="assets/js/main.js"></script>
+
+<!-- Cal.com Embed Script -->
+<script type="text/javascript">
+  (function (C, A, L) {
+    let p = function (a, ar) { a.q.push(ar); };
+    let d = C.document;
+    C.Cal = C.Cal || function () {
+      let cal = C.Cal;
+      let ar = arguments;
+      if (!cal.q) { cal.q = []; }
+      if (ar[0] === 'on') { cal.q.push(ar); return; }
+      let api = function () { p(api, arguments); };
+      let namespace = ar[0];
+      if (namespace == null) { namespace = ""; }
+      api.q = api.q || [];
+      if (typeof namespace === "string") {
+        p(api, ar);
+        if (namespace && C.Cal.ns && C.Cal.ns[namespace]) {
+          C.Cal.ns[namespace].q = C.Cal.ns[namespace].q || [];
+        }
+        const calToUse = C.Cal.ns && C.Cal.ns[namespace] ? C.Cal.ns[namespace] : C.Cal;
+        calToUse.q.push(ar);
+      } else {
+        p(api, ar);
+      }
+      return api;
+    };
+    C.Cal.ns = C.Cal.ns || {};
+    C.Cal.q = C.Cal.q || [];
+    const iframe = d.querySelector("iframe[data-cal-namespace='']");
+    if (iframe) {
+      iframe.contentWindow.Cal.apply(null, arguments);
+    } else {
+      p(C.Cal, arguments);
+    }
+    Cal.loaded = Cal.loaded || false;
+    if (!Cal.loaded) {
+      Cal.loaded = true;
+      const link = d.createElement("script");
+      link.type = "text/javascript";
+      link.async = true;
+      link.src = A;
+      if (L) { link.addEventListener("load", L); }
+      d.head.appendChild(link);
+    }
+  })(window, "https://app.cal.com/embed/embed.js");
+</script>
 </body>
 
 

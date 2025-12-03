@@ -233,6 +233,8 @@
         text-decoration: none;
         transition: var(--transition);
         white-space: nowrap;
+        border: none;
+        cursor: pointer;
       }
 
       .schedule-cta:hover {
@@ -337,6 +339,8 @@
         margin-top: 15px;
         text-align: center;
         font-weight: 600;
+        border: none;
+        cursor: pointer;
       }
 
       /* ========== BREADCRUMBS ========== */
@@ -529,6 +533,7 @@
         text-decoration: none;
         transition: var(--transition);
         font-size: 15px;
+        cursor: pointer;
       }
 
       .contact-cta-btn.primary {
@@ -967,7 +972,7 @@
           <div class="left-header-top">
             <p>
               Ready to unlock emerging market opportunities?
-              <a href="contact-us.html" class="topline-link">
+              <a href="/contact-us" class="topline-link">
                 Contact Us <i class="fas fa-arrow-right"></i>
               </a>
             </p>
@@ -996,45 +1001,45 @@
       <div class="main-header">
         <div class="content">
           <div class="header-left">
-            <a class="thumbnail" href="index.html" aria-label="Woughton Global home">
+            <a class="thumbnail" href="/" aria-label="Woughton Global home">
               <img src="assets/images/logo.png" alt="Woughton Global" />
             </a>
 
             <!-- Desktop Navigation -->
             <nav class="nav-area" aria-label="Primary navigation">
               <ul class="main-nav-list">
-                <li class="main-nav"><a href="index.html">Home</a></li>
+                <li class="main-nav"><a href="/">Home</a></li>
 
                 <li class="main-nav has-dropdown">
-                  <a href="services.html">Services</a>
+                  <a href="/services">Services</a>
                   <ul class="submenu">
-                    <li><a href="services.html#transaction-advisory">Transaction Advisory</a></li>
-                    <li><a href="services.html#market-entry">Market Entry Strategy</a></li>
-                    <li><a href="services.html#capital-markets">Capital Markets</a></li>
+                    <li><a href="/services#transaction-advisory">Transaction Advisory</a></li>
+                    <li><a href="/services#market-entry">Market Entry Strategy</a></li>
+                    <li><a href="/services#capital-markets">Capital Markets</a></li>
                   </ul>
                 </li>
 
-                <!-- <li class="main-nav"><a href="research-hub.html">Insights</a></li> -->
+                <!-- <li class="main-nav"><a href="/research-hub">Insights</a></li> -->
 
                 <li class="main-nav has-dropdown">
-                  <a href="about.html">About</a>
+                  <a href="/about">About</a>
                   <ul class="submenu">
-                    <li><a href="about.html#our-team">Our Team</a></li>
-                    <li><a href="about.html#our-approach">Our Approach</a></li>
-                    <li><a href="about.html#why-africa">Why Africa</a></li>
+                    <li><a href="/about#our-team">Our Team</a></li>
+                    <li><a href="/about#our-approach">Our Approach</a></li>
+                    <li><a href="/about#why-africa">Why Africa</a></li>
                   </ul>
                 </li>
 
-                <li class="main-nav"><a href="contact-us.html">Contact</a></li>
+                <li class="main-nav"><a href="/contact-us">Contact</a></li>
               </ul>
             </nav>
           </div>
 
           <!-- Header Right -->
           <div class="header-right">
-            <a href="https://calendly.com/your-placeholder" class="schedule-cta">
+            <button class="schedule-cta" data-cal-link="woughtonglobal" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'>
               Schedule Consultation
-            </a>
+            </button>
 
             <button class="mobile-hamburger" id="mobileMenuBtn" aria-label="Open menu">
               &#9776;
@@ -1049,34 +1054,34 @@
           <button class="mobile-close" id="mobileCloseBtn" aria-label="Close menu">✕</button>
           
           <ul class="mobile-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
 
             <li>
               <a href="#" class="submenu-toggle">Services +</a>
               <ul class="mobile-submenu">
-                <li><a href="services.html#transaction-advisory">Transaction Advisory</a></li>
-                <li><a href="services.html#market-entry">Market Entry Strategy</a></li>
-                <li><a href="services.html#capital-markets">Capital Markets</a></li>
+                <li><a href="/services#transaction-advisory">Transaction Advisory</a></li>
+                <li><a href="/services#market-entry">Market Entry Strategy</a></li>
+                <li><a href="/services#capital-markets">Capital Markets</a></li>
               </ul>
             </li>
 
-            <!-- <li><a href="research-hub.html">Insights</a></li> -->
+            <!-- <li><a href="/research-hub">Insights</a></li> -->
 
             <li>
               <a href="#" class="submenu-toggle">About +</a>
               <ul class="mobile-submenu">
-                    <li><a href="about.html#our-team">Our Team</a></li>
-                    <li><a href="about.html#our-approach">Our Approach</a></li>
-                    <li><a href="about.html#why-africa">Why Africa</a></li>
+                    <li><a href="/about#our-team">Our Team</a></li>
+                    <li><a href="/about#our-approach">Our Approach</a></li>
+                    <li><a href="/about#why-africa">Why Africa</a></li>
               </ul>
             </li>
 
-            <li><a href="contact-us.html">Contact</a></li>
+            <li><a href="/contact-us">Contact</a></li>
 
             <li>
-              <a href="https://calendly.com/your-placeholder" class="mobile-cta">
+              <button class="mobile-cta" data-cal-link="woughtonglobal" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'>
                 Schedule Consultation
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -1087,7 +1092,7 @@
     <div class="breadcrumbs">
       <div class="container">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><span>/</span></li>
           <li>Contact Us</li>
         </ul>
@@ -1166,10 +1171,12 @@
                 <span>Chat on WhatsApp</span>
               </a>
 
-              <button 
-                type="button" 
-                class="contact-cta-btn secondary" 
-                id="openCalendly"
+              <button
+                type="button"
+                class="contact-cta-btn secondary"
+                data-cal-link="woughtonglobal"
+                data-cal-namespace=""
+                data-cal-config='{"layout":"month_view"}'
               >
                 <i class="far fa-calendar"></i>
                 <span>Book 30-Min Consultation</span>
@@ -1380,11 +1387,11 @@
 
           <div class="footer-col">
             <h4>Quick Links</h4>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <!-- <a href="research-hub.html">Insights</a> -->
-            <a href="about.html#team">Our Team</a>
-            <a href="contact-us.html">Contact</a>
+            <a href="/">Home</a>
+            <a href="/services">Services</a>
+            <!-- <a href="/research-hub">Insights</a> -->
+            <a href="/about#team">Our Team</a>
+            <a href="/contact-us">Contact</a>
           </div>
 
           <div class="footer-col">
@@ -1446,59 +1453,87 @@
         });
       });
 
-      // Calendly Integration
-      const calendlyUrl = "https://calendly.com/your-placeholder";
-      const openCalendly = document.getElementById("openCalendly");
-      if (openCalendly) {
-        openCalendly.addEventListener("click", function () {
-          window.open(calendlyUrl, "_blank", "noopener");
-        });
-      }
+      // Cal.com is automatically initialized via data attributes
+      // No additional JavaScript needed for the booking button
 
-      // Form Submission Handler
+      // Form Submission Handler with Resend API
       const contactForm = document.getElementById('contact-form');
       const formMessages = document.getElementById('form-messages');
 
       if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
           e.preventDefault();
-          
+
           // Get form data
           const formData = new FormData(contactForm);
-          
+          const data = {
+            name: formData.get('name'),
+            organization: formData.get('organization') || 'N/A',
+            email: formData.get('email'),
+            phone: formData.get('phone') || 'N/A',
+            interest: formData.get('interest'),
+            sector: formData.get('sector'),
+            capital: formData.get('capital') || 'N/A',
+            timeline: formData.get('timeline') || 'N/A',
+            country: formData.get('country') || 'N/A',
+            message: formData.get('message'),
+            newsletter: formData.get('newsletter') ? 'Yes' : 'No'
+          };
+
           // Show loading state
           const submitBtn = document.getElementById('submitBtn');
           const originalText = submitBtn.innerHTML;
           submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
           submitBtn.disabled = true;
-          
-          // Submit form
-          fetch('mailer.php', {
-            method: 'POST',
-            body: formData
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success) {
+
+          try {
+            // Send email via Resend API
+            const response = await fetch('https://api.resend.com/emails', {
+              method: 'POST',
+              headers: {
+                'Authorization': 'Bearer re_123456789_PLACEHOLDER_KEY',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                from: 'Contact Form <noreply@woughtonglobal.com>',
+                to: ['info@woughtonglobal.com'],
+                reply_to: data.email,
+                subject: `New Contact Form Submission from ${data.name}`,
+                html: `
+                  <h2>New Contact Form Submission</h2>
+                  <p><strong>Name:</strong> ${data.name}</p>
+                  <p><strong>Organization:</strong> ${data.organization}</p>
+                  <p><strong>Email:</strong> ${data.email}</p>
+                  <p><strong>Phone:</strong> ${data.phone}</p>
+                  <p><strong>Service Interest:</strong> ${data.interest}</p>
+                  <p><strong>Project Sector:</strong> ${data.sector}</p>
+                  <p><strong>Capital Need:</strong> ${data.capital}</p>
+                  <p><strong>Timeline:</strong> ${data.timeline}</p>
+                  <p><strong>Country:</strong> ${data.country}</p>
+                  <p><strong>Newsletter Opt-in:</strong> ${data.newsletter}</p>
+                  <h3>Message:</h3>
+                  <p>${data.message.replace(/\n/g, '<br>')}</p>
+                `
+              })
+            });
+
+            if (response.ok) {
               formMessages.className = 'form-messages success';
               formMessages.textContent = 'Thank you! Your message has been sent successfully. We\'ll respond within 48 hours.';
               contactForm.reset();
             } else {
-              formMessages.className = 'form-messages error';
-              formMessages.textContent = 'Oops! Something went wrong. Please try again or contact us directly.';
+              throw new Error('Email sending failed');
             }
-          })
-          .catch(error => {
+          } catch (error) {
             formMessages.className = 'form-messages error';
-            formMessages.textContent = 'Network error. Please check your connection and try again.';
-          })
-          .finally(() => {
+            formMessages.textContent = 'Oops! Something went wrong. Please try again or contact us directly at info@woughtonglobal.com';
+          } finally {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-            
+
             // Scroll to messages
             formMessages.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          });
+          }
         });
       }
 
@@ -1518,6 +1553,53 @@
           }
         });
       });
+    </script>
+
+    <!-- Cal.com Embed Script -->
+    <script type="text/javascript">
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.q) { cal.q = []; }
+          if (ar[0] === 'on') { cal.q.push(ar); return; }
+          let api = function () { p(api, arguments); };
+          let namespace = ar[0];
+          if (namespace == null) { namespace = ""; }
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            p(api, ar);
+            if (namespace && C.Cal.ns && C.Cal.ns[namespace]) {
+              C.Cal.ns[namespace].q = C.Cal.ns[namespace].q || [];
+            }
+            const calToUse = C.Cal.ns && C.Cal.ns[namespace] ? C.Cal.ns[namespace] : C.Cal;
+            calToUse.q.push(ar);
+          } else {
+            p(api, ar);
+          }
+          return api;
+        };
+        C.Cal.ns = C.Cal.ns || {};
+        C.Cal.q = C.Cal.q || [];
+        const iframe = d.querySelector("iframe[data-cal-namespace='']");
+        if (iframe) {
+          iframe.contentWindow.Cal.apply(null, arguments);
+        } else {
+          p(C.Cal, arguments);
+        }
+        Cal.loaded = Cal.loaded || false;
+        if (!Cal.loaded) {
+          Cal.loaded = true;
+          const link = d.createElement("script");
+          link.type = "text/javascript";
+          link.async = true;
+          link.src = A;
+          if (L) { link.addEventListener("load", L); }
+          d.head.appendChild(link);
+        }
+      })(window, "https://app.cal.com/embed/embed.js");
     </script>
   </body>
 </html>

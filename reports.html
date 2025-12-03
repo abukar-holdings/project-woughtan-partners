@@ -68,7 +68,7 @@
             <p class="top-details">
               Ready to unlock emerging market opportunities?
               <a
-                href="contact-us.html"
+                href="/contact-us"
                 style="color: var(--brand-accent)"
                 class="topline-link"
                 >Contact Us <i class="fal fa-arrow-right"></i
@@ -101,7 +101,7 @@
           <div class="header-left">
             <a
               class="thumbnail"
-              href="index.html"
+              href="/"
               aria-label="Woughton Global home"
             >
               <img src="assets/images/logo.png" alt="Woughton Global" />
@@ -110,21 +110,21 @@
             <!-- ===== Desktop Navigation ===== -->
             <nav class="nav-area" aria-label="Primary navigation">
               <ul class="main-nav-list">
-                <li class="main-nav"><a href="index.html">Home</a></li>
+                <li class="main-nav"><a href="/">Home</a></li>
 
                 <li class="main-nav has-dropdown">
-                  <a href="services.html">Services</a>
+                  <a href="/services">Services</a>
                   <ul class="submenu parent-nav">
                     <li>
-                      <a href="services.html#transaction-advisory"
+                      <a href="/services#transaction-advisory"
                         >Transaction Advisory</a
                       >
                     </li>
                     <li>
-                      <a href="services.html#market-entry">Market Entry</a>
+                      <a href="/services#market-entry">Market Entry</a>
                     </li>
                     <li>
-                      <a href="services.html#capital-markets"
+                      <a href="/services#capital-markets"
                         >Capital Markets</a
                       >
                     </li>
@@ -132,19 +132,19 @@
                 </li>
 
                 <li class="main-nav">
-                  <a href="research-hub.html">Insights</a>
+                  <a href="/research-hub">Insights</a>
                 </li>
 
                 <li class="main-nav has-dropdown">
-                  <a href="about.html">About</a>
+                  <a href="/about">About</a>
                   <ul class="submenu parent-nav">
-                    <li><a href="about.html#our-team">Our Team</a></li>
-                    <li><a href="about.html#our-approach">Our Approach</a></li>
-                    <li><a href="about.html#why-africa">Why Africa</a></li>
+                    <li><a href="/about#our-team">Our Team</a></li>
+                    <li><a href="/about#our-approach">Our Approach</a></li>
+                    <li><a href="/about#why-africa">Why Africa</a></li>
                   </ul>
                 </li>
 
-                <li class="main-nav"><a href="contact-us.html">Contact</a></li>
+                <li class="main-nav"><a href="/contact-us">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -152,14 +152,16 @@
           <!-- ===== Right Section: CTA + Hamburger ===== -->
           <!-- ===== Right Section: CTA + Hamburger ===== -->
           <div class="header-right">
-            <a
-              href="https://calendly.com/your-placeholder"
+            <button
               id="ScheduleCTA"
               class="rts-btn btn-primary schedule-cta"
               style="display: inline-block"
+              data-cal-link="woughtonglobal"
+              data-cal-namespace=""
+              data-cal-config='{"layout":"month_view"}'
             >
               Schedule Consultation
-            </a>
+            </button>
 
             <button
               id="mobileMenuBtn"
@@ -198,40 +200,40 @@
             ✕
           </button>
           <ul class="mobile-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
 
             <li>
               <a href="#" class="submenu-toggle">Services +</a>
               <ul class="mobile-submenu">
                 <li>
-                  <a href="services.html#transactional"
+                  <a href="/services#transactional"
                     >Transactional Advisory</a
                   >
                 </li>
-                <li><a href="services.html#market-entry">Market Entry</a></li>
+                <li><a href="/services#market-entry">Market Entry</a></li>
                 <li>
-                  <a href="services.html#capital-markets">Capital Markets</a>
+                  <a href="/services#capital-markets">Capital Markets</a>
                 </li>
               </ul>
             </li>
 
 
-            <li><a href="research-hub.html">Insights</a></li>
+            <li><a href="/research-hub">Insights</a></li>
 
             <li>
               <a href="#" class="submenu-toggle">About +</a>
               <ul class="mobile-submenu">
-                    <li><a href="about.html#our-team">Our Team</a></li>
-                    <li><a href="about.html#our-approach">Our Approach</a></li>
-                    <li><a href="about.html#why-africa">Why Africa</a></li>
+                    <li><a href="/about#our-team">Our Team</a></li>
+                    <li><a href="/about#our-approach">Our Approach</a></li>
+                    <li><a href="/about#why-africa">Why Africa</a></li>
               </ul>
             </li>
 
-            <li><a href="contact-us.html">Contact</a></li>
+            <li><a href="/contact-us">Contact</a></li>
 
             <li>
-              <a href="https://calendly.com/your-placeholder" class="mobile-cta"
-                >Schedule Consultation</a
+              <button class="mobile-cta" data-cal-link="woughtonglobal" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'
+                >Schedule Consultation</button
               >
             </li>
           </ul>
@@ -310,6 +312,8 @@
           border-radius: 6px;
           font-weight: 700;
           text-decoration: none;
+          border: none;
+          cursor: pointer;
         }
         .rts-btn.schedule-cta:hover {
           background: var(--brand-accent-hover);
@@ -368,6 +372,8 @@
           text-align: center;
           display: block;
           margin-top: 10px;
+          border: none;
+          cursor: pointer;
         }
         .mobile-submenu {
           max-height: 0;
@@ -1194,7 +1200,8 @@
         background: var(--brand-accent);
         color: var(--text-on-primary);
         box-shadow: 0 8px 20px rgba(185, 115, 47, 0.12);
-        border: 1px solid rgba(0, 0, 0, 0.02);
+        border: none;
+        cursor: pointer;
       }
       .rts-btn.btn-primary:hover {
         background: var(--brand-accent-hover);
@@ -1499,7 +1506,8 @@
         background: var(--brand-accent);
         color: var(--text-on-primary);
         box-shadow: 0 6px 16px rgba(185, 115, 47, 0.12);
-        border: 1px solid rgba(7, 29, 54, 0.04);
+        border: none;
+        cursor: pointer;
       }
       .rts-btn.btn-primary:hover {
         background: var(--brand-accent-hover);
@@ -1664,7 +1672,7 @@
                   Felis consequat magnis est fames sagittis ultrices placerat
                   sodales porttitor quisque.
                 </p>
-                <a class="rts-btn btn-primary" href="contact-us.html"
+                <a class="rts-btn btn-primary" href="/contact-us"
                   >Contact Us</a
                 >
               </div>
@@ -1743,11 +1751,11 @@
                 </p>
                 <div class="right">
                   <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="reports.html">Reports</a></li>
-                    <li><a href="research-hub.html">Research Hub</a></li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/reports">Reports</a></li>
+                    <li><a href="/research-hub">Research Hub</a></li>
+                    <li><a href="/contact-us">Contact Us</a></li>
                   </ul>
                 </div>
               </div>
@@ -1925,5 +1933,52 @@
     <script defer src="assets/js/plugins/swiper.js"></script>
     <script defer src="assets/js/plugins/contact.form.js"></script>
     <script defer src="assets/js/main.js"></script>
+
+    <!-- Cal.com Embed Script -->
+    <script type="text/javascript">
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.q) { cal.q = []; }
+          if (ar[0] === 'on') { cal.q.push(ar); return; }
+          let api = function () { p(api, arguments); };
+          let namespace = ar[0];
+          if (namespace == null) { namespace = ""; }
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            p(api, ar);
+            if (namespace && C.Cal.ns && C.Cal.ns[namespace]) {
+              C.Cal.ns[namespace].q = C.Cal.ns[namespace].q || [];
+            }
+            const calToUse = C.Cal.ns && C.Cal.ns[namespace] ? C.Cal.ns[namespace] : C.Cal;
+            calToUse.q.push(ar);
+          } else {
+            p(api, ar);
+          }
+          return api;
+        };
+        C.Cal.ns = C.Cal.ns || {};
+        C.Cal.q = C.Cal.q || [];
+        const iframe = d.querySelector("iframe[data-cal-namespace='']");
+        if (iframe) {
+          iframe.contentWindow.Cal.apply(null, arguments);
+        } else {
+          p(C.Cal, arguments);
+        }
+        Cal.loaded = Cal.loaded || false;
+        if (!Cal.loaded) {
+          Cal.loaded = true;
+          const link = d.createElement("script");
+          link.type = "text/javascript";
+          link.async = true;
+          link.src = A;
+          if (L) { link.addEventListener("load", L); }
+          d.head.appendChild(link);
+        }
+      })(window, "https://app.cal.com/embed/embed.js");
+    </script>
   </body>
 </html>

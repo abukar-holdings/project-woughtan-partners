@@ -732,13 +732,11 @@
       .btn-primary {
         background: var(--brand-accent);
         color: #fff;
-        border: 2px solid var(--brand-accent);
       }
 
       .btn-primary:hover {
         background: var(--brand-accent-hover);
         transform: translateY(-3px);
-        box-shadow: 0 12px 32px rgba(185, 115, 47, 0.35);
       }
 
       .btn-secondary {
@@ -1387,6 +1385,8 @@
         align-items: center;
         gap: 10px;
         transition: var(--transition);
+        border: none;
+        cursor: pointer;
       }
 
       .cta-button:hover {
@@ -1684,7 +1684,7 @@
           <div class="left-header-top">
             <p>
               Ready to unlock emerging market opportunities?
-              <a href="contact-us.html" class="topline-link">
+              <a href="/contact-us" class="topline-link">
                 Contact Us <i class="fas fa-arrow-right"></i>
               </a>
             </p>
@@ -1712,35 +1712,35 @@
       <div class="main-header">
         <div class="content">
           <div class="header-left">
-            <a class="thumbnail" href="index.html" aria-label="Woughton Global home">
+            <a class="thumbnail" href="/" aria-label="Woughton Global home">
               <img src="assets/images/logo.png" alt="Woughton Global" />
             </a>
 
             <nav class="nav-area" aria-label="Primary navigation">
               <ul class="main-nav-list">
-                <li class="main-nav"><a href="index.html">Home</a></li>
+                <li class="main-nav"><a href="/">Home</a></li>
 
                 <li class="main-nav has-dropdown">
-                  <a href="services.html">Services</a>
+                  <a href="/services">Services</a>
                   <ul class="submenu">
-                    <li><a href="services.html#transaction-advisory">Transaction Advisory</a></li>
-                    <li><a href="services.html#market-entry">Market Entry Strategy</a></li>
-                    <li><a href="services.html#capital-markets">Capital Markets</a></li>
+                    <li><a href="/services#transaction-advisory">Transaction Advisory</a></li>
+                    <li><a href="/services#market-entry">Market Entry Strategy</a></li>
+                    <li><a href="/services#capital-markets">Capital Markets</a></li>
                   </ul>
                 </li>
 
-                <!-- <li class="main-nav"><a href="research-hub.html">Insights</a></li> -->
+                <!-- <li class="main-nav"><a href="/research-hub">Insights</a></li> -->
 
                 <li class="main-nav has-dropdown">
-                  <a href="about.html">About</a>
+                  <a href="/about">About</a>
                   <ul class="submenu">
-                    <li><a href="about.html#our-team">Our Team</a></li>
-                    <li><a href="about.html#our-approach">Our Approach</a></li>
-                    <li><a href="about.html#why-africa">Why Africa</a></li>
+                    <li><a href="/about#our-team">Our Team</a></li>
+                    <li><a href="/about#our-approach">Our Approach</a></li>
+                    <li><a href="/about#why-africa">Why Africa</a></li>
                   </ul>
                 </li>
 
-                <li class="main-nav"><a href="contact-us.html">Contact</a></li>
+                <li class="main-nav"><a href="/contact-us">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -1752,9 +1752,9 @@
               <div class="search-dropdown" id="searchDropdown"></div>
             </div>
 
-            <a href="https://calendly.com/your-placeholder" class="schedule-cta">
+            <button class="schedule-cta" data-cal-link="woughtonglobal" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'>
               Schedule Consultation
-            </a>
+            </button>
 
             <button class="mobile-hamburger" id="mobileMenuBtn" aria-label="Open menu">
               &#9776;
@@ -1773,7 +1773,7 @@
           </div>
 
           <ul class="mobile-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
 
             <li>
               <div class="submenu-toggle" data-submenu="services">
@@ -1781,13 +1781,13 @@
                 <i class="fas fa-chevron-down"></i>
               </div>
               <ul class="mobile-submenu" id="submenu-services">
-                <li><a href="services.html#transaction-advisory">Transaction Advisory</a></li>
-                <li><a href="services.html#market-entry">Market Entry Strategy</a></li>
-                <li><a href="services.html#capital-markets">Capital Markets</a></li>
+                <li><a href="/services#transaction-advisory">Transaction Advisory</a></li>
+                <li><a href="/services#market-entry">Market Entry Strategy</a></li>
+                <li><a href="/services#capital-markets">Capital Markets</a></li>
               </ul>
             </li>
 
-            <!-- <li><a href="research-hub.html">Insights</a></li> -->
+            <!-- <li><a href="/research-hub">Insights</a></li> -->
 
             <li>
               <div class="submenu-toggle" data-submenu="about">
@@ -1795,18 +1795,18 @@
                 <i class="fas fa-chevron-down"></i>
               </div>
               <ul class="mobile-submenu" id="submenu-about">
-                <li><a href="about.html#our-team">Our Team</a></li>
-                <li><a href="about.html#our-approach">Our Approach</a></li>
-                <li><a href="about.html#why-africa">Why Africa</a></li>
+                <li><a href="/about#our-team">Our Team</a></li>
+                <li><a href="/about#our-approach">Our Approach</a></li>
+                <li><a href="/about#why-africa">Why Africa</a></li>
               </ul>
             </li>
 
-            <li><a href="contact-us.html">Contact</a></li>
+            <li><a href="/contact-us">Contact</a></li>
 
             <li>
-              <a href="https://calendly.com/your-placeholder" class="mobile-cta">
+              <button class="mobile-cta" data-cal-link="woughtonglobal" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'>
                 Schedule Consultation
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -1831,8 +1831,8 @@
           </p>
 
           <div class="hero-ctas animate-on-scroll animate-delay-2">
-            <a href="contact-us.html" class="btn-woughton btn-primary">Schedule Consultation</a>
-            <a href="services.html" class="btn-woughton btn-secondary">Our Services</a>
+            <button class="btn-woughton btn-primary" style="border: #ffffff;" data-cal-link="woughtonglobal" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'>Schedule Consultation</button>
+            <a href="/services" class="btn-woughton btn-secondary">Our Services</a>
           </div>
 
           <div class="hero-stats">
@@ -1880,7 +1880,7 @@
               <p class="card-copy">
                 End-to-end transaction support across complex emerging-market deals — due diligence, structuring, and investor syndication to close mandates to institutional standards.
               </p>
-              <a class="card-cta" href="services.html#transaction-advisory">
+              <a class="card-cta" href="/services#transaction-advisory">
                 Learn More <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -1896,7 +1896,7 @@
               <p class="card-copy">
                 Practical market-entry playbooks combining local regulatory navigation, partner selection, and go-to-market structuring to accelerate scalable entry.
               </p>
-              <a class="card-cta" href="services.html#market-entry">
+              <a class="card-cta" href="/services#market-entry">
                 Learn More <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -1912,7 +1912,7 @@
               <p class="card-copy">
                 Structuring and placing capital via debt & equity solutions, private placements and institutional fundraising to mobilize large-scale investor pools.
               </p>
-              <a class="card-cta" href="services.html#capital-markets">
+              <a class="card-cta" href="/services#capital-markets">
                 Learn More <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -2086,7 +2086,7 @@
               <p>Comprehensive analysis of GDP growth, investment opportunities, and regulatory developments across Ghana, Nigeria, and Senegal.</p>
               <div class="report-footer">
                 <span class="report-price">$299</span>
-                <a href="research-hub.html" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="/research-hub" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -2101,7 +2101,7 @@
               <p>Strategic insights into transportation, energy, and digital infrastructure projects across Vietnam, Thailand, and Indonesia.</p>
               <div class="report-footer">
                 <span class="report-price">$399</span>
-                <a href="research-hub.html" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="/research-hub" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -2116,7 +2116,7 @@
               <p>Detailed analysis of FDI trends, portfolio investment patterns, and capital allocation strategies for emerging economies.</p>
               <div class="report-footer">
                 <span class="report-price">$199</span>
-                <a href="research-hub.html" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="/research-hub" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -2151,7 +2151,7 @@
               <p>Comprehensive analysis of GDP growth, investment opportunities, and regulatory developments across Ghana, Nigeria, and Senegal.</p>
               <div class="report-footer">
                 <span class="report-price">$299</span>
-                <a href="research-hub.html" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="/research-hub" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -2166,7 +2166,7 @@
               <p>Strategic insights into transportation, energy, and digital infrastructure projects across Vietnam, Thailand, and Indonesia.</p>
               <div class="report-footer">
                 <span class="report-price">$399</span>
-                <a href="research-hub.html" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="/research-hub" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -2181,7 +2181,7 @@
               <p>Detailed analysis of FDI trends, portfolio investment patterns, and capital allocation strategies for emerging economies.</p>
               <div class="report-footer">
                 <span class="report-price">$199</span>
-                <a href="research-hub.html" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="/research-hub" class="report-link">Learn More <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -2195,9 +2195,9 @@
         <p class="cta-text">
           Let's discuss how our expertise in emerging markets can help you achieve your strategic objectives and unlock new opportunities for growth.
         </p>
-        <a href="contact-us.html" class="cta-button">
+        <button class="cta-button" data-cal-link="woughtonglobal" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'>
           Schedule Consultation <i class="fas fa-arrow-right"></i>
-        </a>
+        </button>
       </div>
     </section>
 
@@ -2226,11 +2226,11 @@
 
           <div class="footer-col">
             <h4>Quick Links</h4>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="research-hub.html">Insights</a>
-            <a href="about.html">Our Team</a>
-            <a href="contact-us.html">Contact</a>
+            <a href="/">Home</a>
+            <a href="/services">Services</a>
+            <a href="/research-hub">Insights</a>
+            <a href="/about">Our Team</a>
+            <a href="/contact-us">Contact</a>
           </div>
 
           <div class="footer-col">
@@ -2648,6 +2648,53 @@
           }
         });
       });
+    </script>
+
+    <!-- Cal.com Embed Script -->
+    <script type="text/javascript">
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.q) { cal.q = []; }
+          if (ar[0] === 'on') { cal.q.push(ar); return; }
+          let api = function () { p(api, arguments); };
+          let namespace = ar[0];
+          if (namespace == null) { namespace = ""; }
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            p(api, ar);
+            if (namespace && C.Cal.ns && C.Cal.ns[namespace]) {
+              C.Cal.ns[namespace].q = C.Cal.ns[namespace].q || [];
+            }
+            const calToUse = C.Cal.ns && C.Cal.ns[namespace] ? C.Cal.ns[namespace] : C.Cal;
+            calToUse.q.push(ar);
+          } else {
+            p(api, ar);
+          }
+          return api;
+        };
+        C.Cal.ns = C.Cal.ns || {};
+        C.Cal.q = C.Cal.q || [];
+        const iframe = d.querySelector("iframe[data-cal-namespace='']");
+        if (iframe) {
+          iframe.contentWindow.Cal.apply(null, arguments);
+        } else {
+          p(C.Cal, arguments);
+        }
+        Cal.loaded = Cal.loaded || false;
+        if (!Cal.loaded) {
+          Cal.loaded = true;
+          const link = d.createElement("script");
+          link.type = "text/javascript";
+          link.async = true;
+          link.src = A;
+          if (L) { link.addEventListener("load", L); }
+          d.head.appendChild(link);
+        }
+      })(window, "https://app.cal.com/embed/embed.js");
     </script>
   </body>
 </html>
